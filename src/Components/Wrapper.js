@@ -1,14 +1,27 @@
-import React, { Component } from "react";
+import React, {useState} from "react";
+import { useDispatch } from 'react-redux'
+import { service } from '../actions'
 import { Link } from "react-router-dom";
 
-class Wrapper extends Component {
-  render() {
+const Wrapper = () => {
+
+const dispatch = useDispatch();
+  const [services] = useState([
+    { value: 'Farmer' },
+    { value: 'Consumer' },
+    { value: 'Investor' }
+  ])
+
+ const onLinkClick = (e) => {
+  const value = e.target.name;
+  dispatch(service(value))
+ }
     return (
       <div>
         <header id="header" className="fixed-top">
           <div className="container d-flex align-items-center">
             <h1 className="logo mr-auto">
-              <Link to="index.html">Team-044 Product</Link>
+              <Link to="">Team-044 Product</Link>
             </h1>
             <nav className="nav-menu d-none d-lg-block">
               <ul>
@@ -21,36 +34,28 @@ class Wrapper extends Component {
                 <li>
                   <Link to="/products">Products</Link>
                 </li>
-                <li className="drop-down">
-                  <Link to="">Account</Link>
-                  <ul>
-                    <li>
-                      <Link to="/">Sign Up</Link>
-                    </li>
-                    <li className="drop-down">
-                      <Link to="/">Sign In</Link>
-                      <ul>
-                        <li>
-                          <Link to="/">Investor</Link>
-                        </li>
-                        <li>
-                          <Link to="/">Farmer</Link>
-                        </li>
-                        <li>
-                          <Link to="/">Customers</Link>
-                        </li>
-                      </ul>
-                    </li>
-                  </ul>
+                <li>
+                  <Link to="/sign-up">Sign Up</Link>
                 </li>
+                <li className="drop-down">
+                  <Link to="">Sign In</Link>
+                  <ul>
+                    {services.map(({value}) => (
+                      <li key={value}>
+                        <Link to='/sign-in' name={value} onClick={onLinkClick} > {value} </Link>
+                      </li>
+                    )) } 
+                    </ul>
+                  
+                </li>
+                    
+                  
               </ul>
             </nav>
           </div>
         </header>
-        {this.props.children}
       </div>
     );
   }
-}
 
 export default Wrapper;
