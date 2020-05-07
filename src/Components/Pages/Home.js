@@ -1,8 +1,8 @@
-import React, { Component } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
+import Products from './Products'
 
-class Home extends Component {
-  render() {
+const Home = () => {
     return (
       <div>
         <section id="hero">
@@ -11,17 +11,17 @@ class Home extends Component {
               Welcome to <strong>Team-044 Product</strong>
             </h3>
             <h1>
-              We Connect Farmers, Investors and Consumers around the World
+              We Connect Farmers, Investors <br/> and Consumers around the World
             </h1>
 
-            <Link href="/accounts" className="btn-get-started scrollto">
+            <Link to="/sign-up" className="btn-get-started scrollto">
               Get Started
             </Link>
           </div>
         </section>
+        <Products />
       </div>
     );
   }
-}
 
 export default Home;
