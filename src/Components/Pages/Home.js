@@ -1,8 +1,7 @@
-import React, { Component } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 
-class Home extends Component {
-  render() {
+const Home = () => {
     return (
       <div>
         <section id="hero">
@@ -22,6 +21,5 @@ class Home extends Component {
       </div>
     );
   }
-}
 
 export default Home;
