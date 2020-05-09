@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import CrossServices from "../common/CrossServices";
 
 class Home extends Component {
   render() {
@@ -19,6 +20,7 @@ class Home extends Component {
             </Link>
           </div>
         </section>
+        <CrossServices />
       </div>
     );
   }
