@@ -1,12 +1,8 @@
 .info{
     background: white;
-    width: 55%;
-    margin: 10% auto;
+    margin: 1rem auto;
     padding: 4%;
     font-size: 1rem;
-    -webkit-box-shadow: 6px 9px 22px 3px rgba(176,170,132,0.5);
-    -moz-box-shadow: 6px 9px 22px 3px rgba(176,170,132,0.5);
-    box-shadow: 6px 9px 22px 3px rgba(176,170,132,0.5);
 }
 .info h2 {
     margin: 0;
@@ -21,7 +17,7 @@
     box-shadow: 0 0 0 0.2rem grey;
 }
 .form-control{
-    padding: 5%;
+    padding: 3%;
     border: none;
     border-bottom: 1px solid grey;
     background: white;
@@ -59,13 +55,14 @@
     margin: 1rem .5rem 1rem .5rem;
     
 }
-.row {
-    margin-right: 0; 
-     margin-left: 0;
-}
 @media only screen and (max-width: 600px) {
     .card {
       width: 15rem;
       margin: 1rem auto;
     }
   }
+.order {
+    margin-right: 0;
+    padding-top: 3rem!important;
+    margin-top: 3rem!important;
+}
