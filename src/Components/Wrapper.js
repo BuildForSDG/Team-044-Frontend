@@ -1,8 +1,7 @@
-import React, { Component } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 
-class Wrapper extends Component {
-  render() {
+const Wrapper = () => {
     return (
       <div>
         <header id="header" className="fixed-top">
@@ -19,10 +18,10 @@ class Wrapper extends Component {
                   <Link to="/services">Services</Link>
                 </li>
                 <li>
-                <Link to="/dashboard/chat">Chat</Link>
-              </li>
-                <li>
                   <Link to="/products">Products</Link>
+                </li>
+                <li>
+                  <Link to="/dashboard">Dashboard</Link>
                 </li>
                 <li className="drop-down">
                   <Link to="">Account</Link>
@@ -53,6 +52,5 @@ class Wrapper extends Component {
       </div>
     );
   }
-}
 
 export default Wrapper;
