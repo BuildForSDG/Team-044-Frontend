@@ -19,6 +19,9 @@ class Wrapper extends Component {
                   <Link to="/services">Services</Link>
                 </li>
                 <li>
+                <Link to="/dashboard/chat">Chat</Link>
+              </li>
+                <li>
                   <Link to="/products">Products</Link>
                 </li>
                 <li className="drop-down">
@@ -47,7 +50,6 @@ class Wrapper extends Component {
             </nav>
           </div>
         </header>
-        {this.props.children}
       </div>
     );
   }
