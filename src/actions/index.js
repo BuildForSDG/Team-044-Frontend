@@ -1,6 +1,5 @@
-export const service = (nr) => {
-    return {
-        type: 'SERVICE',
-        payload: nr
-    }
-}
+export const service = (nr) => ({
+  type: 'SERVICE',
+  payload: nr,
+});
+

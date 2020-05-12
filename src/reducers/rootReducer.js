@@ -1,8 +1,8 @@
-import { combineReducers } from 'redux'; 
+import { combineReducers } from 'redux';
 import serviceReducer from './serviceReducer';
 
 const rootReducer = combineReducers({
-    serviceReducer
+  serviceReducer,
 });
 
 export default rootReducer;
