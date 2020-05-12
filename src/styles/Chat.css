@@ -1,0 +1,137 @@
+.chat-lists {
+  width: 70%;
+  margin: 10% auto;
+}
+.empty {
+  margin: 0 auto;
+  width: 50%;
+  padding:10%;
+  background: gray;
+  color: white;
+}
+.chat-list {
+  display: flex;
+  justify-content: space-evenly;
+  
+}
+.chat-list p {
+  padding-top: 5px;
+  margin-bottom: 0;
+}
+.chat-list i {
+  font-size: 27px;
+    background: gray;
+    padding: 10px;
+    color: white;
+}
+
+.chat-app {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+.chat-box {
+    display: flex;
+    flex-direction: column;
+    margin: 10% auto;
+    height: 60%;
+    width: 35%;
+    background: gray;
+}
+
+.chat-header {
+    color: white;
+    border: none;
+    border-bottom: 1px solid white;
+    display:flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+
+.icon a{
+    height: 15px;
+    color: white;
+    
+}
+
+.form-control::placeholder {
+    font-style: italic;
+}
+.chat-message {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 5%;
+    margin-top: 3px;
+}
+.message-box {
+    background: #F3F3F3;
+    border-radius: 20px;
+    padding: 5px 20px;
+    color: white;
+    display: inline-block;
+    max-width: 80%;
+}
+.receive {
+    justify-content: flex-start;
+}
+.backgroundBlue {
+    background: #2979FF;
+  }
+  
+  .backgroundLight {
+    background: #F3F3F3;
+    color: black;
+  }
+
+.send {
+    justify-content: flex-end;
+}
+.chat-header h3{
+    margin-bottom: 0;
+}
+.chat-message p {
+    margin-bottom: 0;
+}
+.form {
+    border-top: 1px solid white;
+    display: flex;
+    
+   /* background: black; */
+  }
+  .form-control {
+    margin-left: 10px;
+    border-radius: 20px;
+  }
+  .btn { 
+    color: white;
+    display: inline-block;
+    border: none;
+  
+  }
+  .messages {
+    padding: 5% 0;
+    overflow: auto;
+    flex: auto;
+  }
+   
+  @media (min-width: 480px) and (max-width: 1200px) {
+    .chat-box {
+      width: 60%;
+    }
+  }
+  
+
+  @media (min-width: 320px) and (max-width: 480px) {
+    .chat-app {
+      height: 100vh;
+      margin-top: 40px;
+    }
+  
+    .chat-box{
+      width: 100%;
+      height: 100%;
+        
+  }
+  }

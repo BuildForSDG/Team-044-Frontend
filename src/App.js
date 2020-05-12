@@ -1,25 +1,21 @@
-import React from "react";
-import Wrapper from "./Components/Wrapper";
-import { BrowserRouter as Router, Route,Switch } from "react-router-dom";
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Wrapper from './Components/Wrapper';
 
-//Pages
-import Home from "./Components/Pages/Home";
-import FarmerDashboard from './Components/Pages/FarmerDashboard';
-import EditFarmerProfile from './Components/Pages/EditFarmerProfile';
-import FarmProduce from './Components/Pages/FarmProduce';
+// Pages
+import Home from './Components/Pages/Home';
+import ChatList from './Components/Pages/ChatList';
+import Chat from './Components/Pages/Chat';
 
-const App = () => {
-  return (
-    <Router>
-      <Wrapper/>
-        <Switch>
-          <Route exact={true} path="/" component={Home} />
-          <Route exact={true} path="/dashboard" component={FarmerDashboard} />
-          <Route  path="/dashboard/edit" component={EditFarmerProfile} />
-          <Route  path="/dashboard/products" component={FarmProduce} />
-        </Switch>
-    </Router>
-  );
-}
+const App = () => (
+  <Router>
+    <Wrapper />
+    <Switch>
+      <Route exact path="/" component={Home} />
+      <Route exact path="/dashboard/chat" component={ChatList} />
+      <Route path="/dashboard/chat/123" component={Chat} />
+    </Switch>
+  </Router>
+);
 
 export default App;
