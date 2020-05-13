@@ -8,6 +8,9 @@
     margin: 0;
     margin-bottom: 1.7rem;
 }
+.info .width {
+    width: 100%;
+}
 .custom-select {
     border: 1px solid grey;
 }
