@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import '../../styles/SignUp-In.css';
 import { useSelector } from 'react-redux';
+
+import '../../styles/SignUp-In.css';
 
 const Login = () => {
   const service = useSelector((state) => state.serviceReducer);

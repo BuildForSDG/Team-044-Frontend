@@ -15,6 +15,7 @@ const Wrapper = () => {
     const value = e.target.name;
     dispatch(service(value));
   };
+
   return (
     <div>
       <header id="header" className="fixed-top">
@@ -33,11 +34,13 @@ const Wrapper = () => {
               <li>
                 <Link to="/products">Products</Link>
               </li>
+
               <li>
                 <Link to="/sign-up">Sign Up</Link>
               </li>
               <li className="drop-down">
-                <li>Sign In</li>
+                <Link to="/">Sign In</Link>
+
                 <ul>
                   {services.map(({ value }) => (
                     <li key={value}>
@@ -50,6 +53,10 @@ const Wrapper = () => {
                   )) }
                 </ul>
 
+              </li>
+
+              <li>
+                <Link to="/">Sign Out</Link>
               </li>
 
 
