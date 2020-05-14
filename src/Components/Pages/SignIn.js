@@ -24,9 +24,12 @@ const Login = () => {
   const onFormSubmit = (e) => {
     e.preventDefault();
     //  SEND TO BACKEND
-    console.log(data);
 
     // VERIFY IF PASSWORD MATCH AND USER ALREADY EXISTS
+
+    console.log(data);
+    //  ELSE
+    // WRONG EMAIL/PASSWORD - SIGN UP
   };
 
   return (
