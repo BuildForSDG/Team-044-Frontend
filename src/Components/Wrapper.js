@@ -20,7 +20,7 @@ const Wrapper = () => (
               <Link to="/products">Products</Link>
             </li>
             <li>
-              <Link to="/dashboard">Farmer's Dashboard</Link>
+              <Link to="/dashboard">Farmer Dashboard</Link>
             </li>
             <li className="drop-down">
               <Link to="">Account</Link>

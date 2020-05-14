@@ -10,7 +10,6 @@ const FarmProduce = () => (
     <div className="col-7 col-lg-9">
       <FarmProduceForm />
     </div>
-
   </div>
 );
 

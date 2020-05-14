@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 
 import '../styles/Dashboard.css';
 
-
 const EditFarmerProfileForm = () => {
   const [firstName, setFirstName] = useState('Adeyemi');
   const [lastName, setLastName] = useState('Kuti');

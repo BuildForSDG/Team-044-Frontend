@@ -21,11 +21,6 @@ const SideNavigation = () => (
       </li>
 
       <hr />
-      <li>
-        <Link to="/dashboard/products">New</Link>
-      </li>
-
-      <hr />
       <li className="">Chats</li>
       <hr />
     </ul>
