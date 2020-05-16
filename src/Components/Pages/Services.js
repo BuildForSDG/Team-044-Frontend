@@ -26,7 +26,9 @@ class Services extends Component {
                     <i className="bx bxl-dribbble"></i>
                   </div>
                   <h4 className="title">
-                    <Link to="">Farmers</Link>
+                    <Link to="/signup/farmers" id="farmers">
+                      Farmers
+                    </Link>
                   </h4>
                   <p className="description">
                     We have set of Farmers that are ready in producing foods and
@@ -41,7 +43,9 @@ class Services extends Component {
                     <i className="bx bx-file"></i>
                   </div>
                   <h4 className="title">
-                    <Link to="">Investors</Link>
+                    <Link to="/signup/investors" id="investors">
+                      Investors
+                    </Link>
                   </h4>
                   <p className="description">
                     We have set of investors that are ready to help the less
@@ -56,7 +60,9 @@ class Services extends Component {
                     <i className="bx bx-tachometer"></i>
                   </div>
                   <h4 className="title">
-                    <Link to=""> Consumers</Link>
+                    <Link to="/signup/consumers" id="consumers">
+                      Consumers
+                    </Link>
                   </h4>
                   <p className="description">
                     We connects both the farmers and the consumer of their farm

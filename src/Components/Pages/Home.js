@@ -15,7 +15,7 @@ class Home extends Component {
               We Connect Farmers, Investors and Consumers around the World
             </h1>
 
-            <Link href="/accounts" className="btn-get-started scrollto">
+            <Link to="/accounts" className="btn-get-started scrollto">
               Get Started
             </Link>
           </div>
