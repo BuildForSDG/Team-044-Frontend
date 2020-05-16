@@ -1,18 +1,24 @@
-import React from "react";
-import Wrapper from "./Components/Wrapper";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Wrapper from './Components/Wrapper';
 
-//Pages
-import Home from "./Components/Pages/Home";
+// Pages
+import Home from './Components/Pages/Home';
+import InvestorDashboard from './Components/Pages/InvestorDashboard';
+import EditInvestorProfile from './Components/Pages/EditInvestorProfile';
 
-function App() {
-  return (
-    <Router>
-      <Wrapper>
-        <Route exact={true} path="/" component={Home} />
-      </Wrapper>
-    </Router>
-  );
-}
+const App = () => (
+  <Router>
+    <Wrapper />
+    <Switch>
+      <Route exact path="/" component={Home} />
+      <Route exact path="/dashboard/investor" component={InvestorDashboard} />
+      <Route path="/dashboard/edit" component={EditInvestorProfile} />
+
+    </Switch>
+
+  </Router>
+);
+
 
 export default App;
