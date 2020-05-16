@@ -129,7 +129,7 @@ const SignUpForm = () => {
             </option>
           )) }
         </select>
-        <p>
+        <p id="T-C">
           By clicking Register,
           you are indicating that you have read and agree
           to the Terms & Conditions of using this service.

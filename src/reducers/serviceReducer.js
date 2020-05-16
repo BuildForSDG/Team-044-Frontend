@@ -3,7 +3,7 @@ const option = '';
 const serviceReducer = (state = option, action) => {
   switch (action.type) {
     case 'SERVICE':
-      return state + action.payload;
+      return state = action.payload;
     default:
       return state;
   }
