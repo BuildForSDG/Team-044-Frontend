@@ -5,10 +5,7 @@ const initialState = {
 const serviceReducer = (state = initialState, action) => {
   switch (action.type) {
     case 'SERVICE':
-      return {
-        ...state,
-        service: action.payload,
-      };
+      return { ...state, service: action.payload };
     default:
       return state;
   }
