@@ -6,7 +6,7 @@
   font-size: 1rem;
   -webkit-box-shadow: 6px 9px 22px 3px rgba(176, 170, 132, 0.5);
   -moz-box-shadow: 6px 9px 22px 3px rgba(176, 170, 132, 0.5);
-  box-shadow: 6px 9px 22px 3px rgba(176,170, 132, 0.5);
+  box-shadow: 6px 9px 22px 3px rgba(176, 170, 132, 0.5);
 }
 
 @media (min-width: 330px) and (max-width: 700px) {
@@ -33,7 +33,7 @@
 .form-control:focus {
   color: #495057;
   background-color: #fff;
-  border: .1px solid grey;
+  border: 0.1px solid grey;
   outline: 0;
   box-shadow: 0 0 0 0.2rem grey;
 }
