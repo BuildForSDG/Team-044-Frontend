@@ -1,9 +1,14 @@
-const option = '';
+const initialState = {
+  service: '',
+};
 
-const serviceReducer = (state = option, action) => {
+const serviceReducer = (state = initialState, action) => {
   switch (action.type) {
     case 'SERVICE':
-      return state = action.payload;
+      return {
+        ...state,
+        service: action.payload,
+      };
     default:
       return state;
   }

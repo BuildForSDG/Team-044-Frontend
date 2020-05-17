@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { service } from '../actions';
+import service from '../actions';
 
 const Wrapper = () => {
   const dispatch = useDispatch();
@@ -34,32 +34,24 @@ const Wrapper = () => {
               <li>
                 <Link to="/products">Products</Link>
               </li>
-
               <li>
                 <Link to="/sign-up">Sign Up</Link>
               </li>
               <li className="drop-down">
                 <Link to="/">Sign In</Link>
-
                 <ul>
                   {services.map(({ value }) => (
                     <li key={value}>
                       <Link to="/sign-in" name={value} onClick={onLinkClick}>
-                        {' '}
                         {value}
-                        {' '}
                       </Link>
                     </li>
                   )) }
                 </ul>
-
               </li>
-
               <li>
                 <Link to="/">Sign Out</Link>
               </li>
-
-
             </ul>
           </nav>
         </div>

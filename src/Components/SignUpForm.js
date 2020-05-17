@@ -51,10 +51,10 @@ const SignUpForm = () => {
   };
   const onFormSubmit = (e) => {
     e.preventDefault();
-    if (password === confirmPassword && password.match(/(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/)) {
+    if (password === confirmPassword && password.match(/(?=.*?[0-9])(?=.*?[#?!@$%^&*-.]).{8,}$/)) {
       //  SEND TO BACKEND
       setError('');
-      console.log(data);
+      // PRINT DATA
     } else {
       setError('Your passwword must contain at least 6 characters, including 1 special character(#,?,!,@,-, etc) & 1 number');
     }
@@ -123,9 +123,7 @@ const SignUpForm = () => {
           <option>Choose Service</option>
           {services.map(({ value }) => (
             <option key={value} value={value} id={value}>
-              {' '}
               {value}
-              {' '}
             </option>
           )) }
         </select>
@@ -137,7 +135,10 @@ const SignUpForm = () => {
         <div className="button">
           <button type="submit" className="btn btn-block">Register</button>
         </div>
-        <p id="error">{error}</p>
+        <p id="error">
+          {error}
+        </p>
+        <p>{data.firstname}</p>
       </form>
 
 

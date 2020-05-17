@@ -30,7 +30,7 @@ describe('SignUpForm', () => {
 // SIGN IN TESTS
 describe('Login', () => {
   const store = mockStore({
-    serviceReducer: '',
+    serviceReducer: { service: '' },
   });
   const wrapper = mount(
     <Provider store={store}>

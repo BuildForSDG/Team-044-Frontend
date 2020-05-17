@@ -14,7 +14,6 @@ import SignIn from './Components/Pages/SignIn';
 // Redux store
 const store = createStore(
   rootReducer,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
 );
 
 const App = () => (

@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import '../../styles/SignUp-In.css';
 
 const Login = () => {
-  const service = useSelector((state) => state.serviceReducer);
+  const service = useSelector((state) => state.serviceReducer.service);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -27,7 +27,8 @@ const Login = () => {
 
     // VERIFY IF PASSWORD MATCH AND USER ALREADY EXISTS
 
-    console.log(data);
+    // PRINT DATA
+
     //  ELSE
     // WRONG EMAIL/PASSWORD - SIGN UP
   };
@@ -35,6 +36,7 @@ const Login = () => {
   return (
     <div className="info">
       <h2 className="text-center">Login</h2>
+      <p className="text-center">{data.service}</p>
       <form onSubmit={onFormSubmit}>
         <div className="form-group">
           <input
