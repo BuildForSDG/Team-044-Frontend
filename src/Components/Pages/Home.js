@@ -1,5 +1,6 @@
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import CrossServices from '../common/CrossServices';
 
 class Home extends Component {
   render() {
@@ -14,11 +15,12 @@ class Home extends Component {
               We Connect Farmers, Investors and Consumers around the World
             </h1>
 
-            <Link href="/accounts" className="btn-get-started scrollto">
+            <Link to="/accounts" className="btn-get-started scrollto">
               Get Started
             </Link>
           </div>
         </section>
+        <CrossServices />
       </div>
     );
   }
