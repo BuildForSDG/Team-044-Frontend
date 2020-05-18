@@ -5,7 +5,7 @@ import Wrapper from './Components/Wrapper';
 // Pages
 import Home from './Components/Pages/Home';
 import ChatList from './Components/Pages/ChatList';
-import Chat from './Components/Pages/Chat';
+import ChatBox from './Components/Pages/ChatBox';
 
 const App = () => (
   <Router>
@@ -13,7 +13,7 @@ const App = () => (
     <Switch>
       <Route exact path="/" component={Home} />
       <Route exact path="/dashboard/chat" component={ChatList} />
-      <Route path="/dashboard/chat/123" component={Chat} />
+      <Route path="/dashboard/chat/123" component={ChatBox} />
     </Switch>
   </Router>
 );

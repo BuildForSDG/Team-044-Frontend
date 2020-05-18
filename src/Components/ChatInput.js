@@ -9,7 +9,7 @@ const ChatInput = () => {
   };
   const onChatSubmit = (e) => {
     e.preventDefault();
-    alert(text);
+    // BACKEND CONNECTION
   };
   return (
     <div className="chat-input">
@@ -20,7 +20,6 @@ const ChatInput = () => {
             type="submit"
             className="btn"
           >
-            {' '}
             <i className="bx bxs-send" />
           </button>
         </div>
