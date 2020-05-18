@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class Wrapper extends Component {
   render() {
@@ -15,14 +15,14 @@ class Wrapper extends Component {
                 <li className="active">
                   <Link to="/">Home</Link>
                 </li>
-                <li>
+                <li className="services">
                   <Link to="/services">Services</Link>
                 </li>
                 <li>
                   <Link to="/products">Products</Link>
                 </li>
                 <li className="drop-down">
-                  <Link to="">Account</Link>
+                  <Link to="/">Account</Link>
                   <ul>
                     <li>
                       <Link to="/">Sign Up</Link>
