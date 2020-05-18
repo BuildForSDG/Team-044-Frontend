@@ -59,6 +59,16 @@ h6 {
   padding: 20px 0;
 }
 
+.services .icon-box:hover .title a,
+.services .icon-box:hover .description {
+  color: #fff;
+}
+
+/* service */
+.services .title a {
+  color: #111;
+}
+
 #header .logo {
   font-size: 32px;
   margin: 0;
@@ -88,11 +98,6 @@ h6 {
   background: #fff;
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
   padding: 12px 0;
-}
-
-.services .icon-box:hover .title a,
-.services .icon-box:hover .description {
-  color: #fff;
 }
 
 #header.header-scrolled .logo a,
@@ -238,11 +243,6 @@ h6 {
   .nav-menu .drop-down .drop-down > a:after {
     content: '\ea9d';
   }
-}
-
-/* service */
-.services .title a {
-  color: #111;
 }
 
 /* Mobile Navigation */
