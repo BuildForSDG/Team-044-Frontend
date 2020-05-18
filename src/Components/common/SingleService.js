@@ -7,7 +7,7 @@ class SingleService extends Component {
       <div className="col-md-6 col-lg-3 d-flex align-items-right mb-5 mb-lg-0">
         <div className="icon-box">
           <div className="icon">
-            <i className={`${this.props.icon}`}></i>
+            <i className={`${this.props.icon}`} />
           </div>
           <h4 className="title">
             <Link to="">{this.props.title}</Link>

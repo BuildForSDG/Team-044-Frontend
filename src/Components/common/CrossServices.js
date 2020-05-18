@@ -40,9 +40,9 @@ class CrossServices extends Component {
             </p>
           </div>
           <div className="row">
-            {services.map((service, index) => {
-              return <SingleService {...service} key={index} />;
-            })}
+            {services.map((service, index) => (
+              <SingleService {...service} key={index} />
+            ))}
           </div>
         </div>
       </section>

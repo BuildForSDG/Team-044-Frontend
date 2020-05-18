@@ -10,7 +10,9 @@ class Services extends Component {
             <div className="section-title">
               <h2>Services</h2>
               <h3>
-                We do offer awesome <span>Services</span>
+                We do offer awesome
+                {" "}
+                <span>Services</span>
               </h3>
               <p>
                 Our services includes connecting farmers from various places,
@@ -23,7 +25,7 @@ class Services extends Component {
               <div className="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
                 <div className="icon-box">
                   <div className="icon">
-                    <i className="bx bxl-dribbble"></i>
+                    <i className="bx bxl-dribbble" />
                   </div>
                   <h4 className="title">
                     <Link to="/signup/farmers" id="farmers">
@@ -40,7 +42,7 @@ class Services extends Component {
               <div className="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
                 <div className="icon-box">
                   <div className="icon">
-                    <i className="bx bx-file"></i>
+                    <i className="bx bx-file" />
                   </div>
                   <h4 className="title">
                     <Link to="/signup/investors" id="investors">
@@ -57,7 +59,7 @@ class Services extends Component {
               <div className="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
                 <div className="icon-box">
                   <div className="icon">
-                    <i className="bx bx-tachometer"></i>
+                    <i className="bx bx-tachometer" />
                   </div>
                   <h4 className="title">
                     <Link to="/signup/consumers" id="consumers">
