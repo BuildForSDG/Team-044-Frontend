@@ -12,6 +12,7 @@
   margin-left: 1rem;
   margin-right: 1rem;
 }
+
 @media (min-width: 320px) and (max-width: 700px) {
   .card {
     margin-left: 1.5rem;
@@ -36,7 +37,7 @@
   }
 }
 
-Link {
+.link {
   text-align: center;
 }
 

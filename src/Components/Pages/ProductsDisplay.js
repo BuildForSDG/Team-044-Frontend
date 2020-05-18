@@ -10,7 +10,7 @@ const ProductsDisplay = () => (
     <p>Product Description</p>
     <div className="payment">Payment Methods</div>
     <div>Chat with the Farmer</div>
-    <Link to="/products">Go Back</Link>
+    <Link to="/products" className="link">Go Back</Link>
   </div>
 );
 

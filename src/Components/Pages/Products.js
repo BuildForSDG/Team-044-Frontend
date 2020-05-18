@@ -80,7 +80,7 @@ const Products = () => {
                 <p>{price}</p>
               </div>
               <div className="text-center">
-                <Link to="/products/display" className="btn">Purchase</Link>
+                <Link to="/products/display" className="btn link">Purchase</Link>
               </div>
             </div>
           </div>
