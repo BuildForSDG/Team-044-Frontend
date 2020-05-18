@@ -1,6 +1,7 @@
 import React from 'react';
-import '../../styles/Products.css';
 import { Link } from 'react-router-dom';
+import '../../styles/Products.css';
+
 
 const Products = () => {
   const showcase = [
@@ -8,59 +9,58 @@ const Products = () => {
       img: 'https://images.unsplash.com/photo-1472653525502-fc569e405a74?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
       product: 'carrot',
       price: '$899.00',
-      id: 'jsnmsc',
+      id: 'one',
     },
 
     {
       img: 'https://images.unsplash.com/photo-1472653525502-fc569e405a74?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
       product: 'carrot',
       price: '$899.00',
-      id: 'scnkc',
+      id: 'two',
     },
 
     {
       img: 'https://images.unsplash.com/photo-1472653525502-fc569e405a74?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
       product: 'carrot',
       price: '$899.00',
-      id: ' m,cs',
+      id: 'three',
     },
 
     {
       img: 'https://images.unsplash.com/photo-1472653525502-fc569e405a74?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
       product: 'carrot',
       price: '$899.00',
-      id: 'mkcc',
+      id: 'four',
     },
 
     {
       img: 'https://images.unsplash.com/photo-1472653525502-fc569e405a74?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
       product: 'carrot',
       price: '$899.00',
-      id: '00s9ss',
+      id: 'five',
     },
 
     {
       img: 'https://images.unsplash.com/photo-1472653525502-fc569e405a74?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
       product: 'carrot',
       price: '$899.00',
-      id: 'd9a999',
+      id: 'six',
     },
 
     {
       img: 'https://images.unsplash.com/photo-1472653525502-fc569e405a74?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
       product: 'carrot',
       price: '$899.00',
-      id: 'pppcm',
+      id: 'seven',
     },
 
     {
       img: 'https://images.unsplash.com/photo-1472653525502-fc569e405a74?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
       product: 'carrot',
       price: '$899.00',
-      id: 'den',
+      id: 'eight',
     },
   ];
-
   return (
     <div className="center">
       <h1>Showcase</h1>
@@ -69,11 +69,9 @@ const Products = () => {
           img, product, price, id,
         }) => (
           <div className="card mb-5 " key={id}>
-
             <img
               className="img-fluid"
               src={img}
-
               alt="A product"
             />
             <div className="card-body">
@@ -81,7 +79,6 @@ const Products = () => {
                 <p className="card-title">{product}</p>
                 <p>{price}</p>
               </div>
-
               <div className="text-center">
                 <Link to="/products/display" className="btn">Purchase</Link>
               </div>

@@ -24,8 +24,6 @@ const Wrapper = () => (
             </li>
             <li>
               <Link to="/">Sign In</Link>
-
-
             </li>
           </ul>
         </nav>
@@ -33,6 +31,5 @@ const Wrapper = () => (
     </header>
   </div>
 );
-
 
 export default Wrapper;

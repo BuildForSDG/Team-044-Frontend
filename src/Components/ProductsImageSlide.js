@@ -5,7 +5,6 @@ const ProductsImageSlide = () => (
     <ol className="carousel-indicators">
       <li data-target="carouselExampleIndicators" data-slide-to="0" className="active" />
       <li data-target="carouselExampleIndicators" data-slide-to="1" />
-      <li data-target="#carouselExampleIndicators" data-slide-to="2" />
     </ol>
     <div className="carousel-inner">
       <div className="carousel-item active">
@@ -18,13 +17,6 @@ const ProductsImageSlide = () => (
       <div className="carousel-item">
         <img
           src="https://images.unsplash.com/photo-1532509774891-141d37f25ae9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&"
-          className="d-block w-100"
-          alt="..."
-        />
-      </div>
-      <div className="carousel-item">
-        <img
-          src="https://images.unsplash.com/photo-1472653525502-fc569e405a74?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
           className="d-block w-100"
           alt="..."
         />

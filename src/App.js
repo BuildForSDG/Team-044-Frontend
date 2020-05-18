@@ -7,7 +7,6 @@ import Home from './Components/Pages/Home';
 import Products from './Components/Pages/Products';
 import ProductsDisplay from './Components/Pages/ProductsDisplay';
 
-
 const App = () => (
   <Router>
     <Wrapper />
@@ -17,7 +16,6 @@ const App = () => (
       <Route path="/products/display" component={ProductsDisplay} />
     </Switch>
   </Router>
-
 );
 
 export default App;
