@@ -14,7 +14,14 @@ const ChatInput = () => {
   return (
     <div className="chat-input">
       <form className="form py-3 px-auto" onSubmit={onChatSubmit}>
-        <input type="text" value={text} onChange={onTextChange} className="form-control" placeholder="type somthing here..." />
+        <input
+          id="text"
+          type="text"
+          value={text}
+          onChange={onTextChange}
+          className="form-control"
+          placeholder="type somthing here..."
+        />
         <div className="button-wrapper">
           <button
             type="submit"

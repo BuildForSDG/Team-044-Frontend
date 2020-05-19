@@ -1,10 +1,10 @@
 import React from 'react';
 import enzyme, { shallow } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16.3';
+import Adapter from 'enzyme-adapter-react-16';
 import ChatBox from './Components/Pages/ChatBox';
 import ChatHeader from './Components/ChatHeader';
 import ChatMessage from './Components/ChatMessage';
-// import ChatInput from './Components/ChatInput';
+import ChatList from './Components/Pages/ChatList'
 
 enzyme.configure({ adapter: new Adapter() });
 
@@ -35,7 +35,11 @@ describe('Chat Message', () => {
   });
 });
 
-// Test For ChatInput Component
-
-
 // Test For ChatList Component
+describe('Chat List', () => {
+  it('should show icon', () => {
+    const wrapper = shallow(<ChatList />);
+    const content = wrapper.find('i');
+    expect(content.hasClass('bx')).toBeTruthy();
+  });
+});
