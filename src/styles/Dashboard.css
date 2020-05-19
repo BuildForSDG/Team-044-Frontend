@@ -66,7 +66,7 @@
 
 .card {
   width: 12rem;
-  margin: 1rem 0.5rem 1rem 0.5rem;   
+  margin: 1rem 0.5rem 1rem 0.5rem;
 }
 
 @media only screen and (max-width: 600px) {
@@ -78,6 +78,6 @@
 
 .order {
   margin-right: 0;
-  padding-top: 3rem!important;
-  margin-top: 3rem!important;
+  padding-top: 3rem;
+  margin-top: 3rem;
 }
