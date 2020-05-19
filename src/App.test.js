@@ -4,7 +4,7 @@ import Adapter from 'enzyme-adapter-react-16';
 import ChatBox from './Components/Pages/ChatBox';
 import ChatHeader from './Components/ChatHeader';
 import ChatMessage from './Components/ChatMessage';
-import ChatList from './Components/Pages/ChatList'
+import ChatList from './Components/Pages/ChatList';
 
 enzyme.configure({ adapter: new Adapter() });
 
