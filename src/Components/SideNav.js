@@ -6,27 +6,24 @@ const SideNavigation = () => (
   <div className="navigation">
     <img
       src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"
-      alt=""
+      alt=".."
       className="img-fluid"
     />
-    <h4 className="text-center my-4">First Name</h4>
-    <ul className="">
+    <h4 className="text-center my-4 name">First Name</h4>
+    <ul>
       <hr />
       <li>
-        <Link to="/dashboard">Dashboard</Link>
+        <Link to="/dashboard" id="dashboard">Dashboard</Link>
       </li>
       <hr />
-      <li className="">
-        <Link to="/dashboard/edit"> My Profile</Link>
+      <li>
+        <Link to="/dashboard/edit" id="profile">My Profile</Link>
       </li>
-
       <hr />
-      <li className="">Chats</li>
+      <li>Chats</li>
       <hr />
     </ul>
-
   </div>
 );
-
 
 export default SideNavigation;

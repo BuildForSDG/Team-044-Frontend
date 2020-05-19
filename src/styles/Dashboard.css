@@ -1,71 +1,83 @@
-.info{
-    background: white;
-    margin: 1rem auto;
-    padding: 4%;
-    font-size: 1rem;
+.info {
+  background: white;
+  margin: 1rem auto;
+  padding: 4%;
+  font-size: 1rem;
 }
+
 .info h2 {
-    margin: 0;
-    margin-bottom: 1.7rem;
+  margin: 0;
+  margin-bottom: 1.7rem;
 }
+
 .info .width {
-    width: 100%;
+  width: 100%;
 }
+
 .custom-select {
-    border: 1px solid grey;
+  border: 1px solid grey;
 }
+
 .custom-select:focus {
-    border: .1px solid grey;
-    outline: 0;
-    box-shadow: 0 0 0 0.2rem grey;
+  border: 0.1px solid grey;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem grey;
 }
-.form-control{
-    padding: 3%;
-    border: none;
-    border-bottom: 1px solid grey;
-    background: white;
+
+.form-control {
+  padding: 3%;
+  border: none;
+  border-bottom: 1px solid grey;
+  background: white;
 }
 
 .form-control:focus {
-    color: #495057;
-    background-color: #fff;
-    border: .1px solid grey;
-    outline: 0;
-    box-shadow: 0 0 0 0.2rem grey;
+  color: #495057;
+  background-color: #fff;
+  border: 0.1px solid grey;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem grey;
 }
+
 .button {
-    margin-bottom: 1rem;
+  margin-bottom: 1rem;
 }
+
 .btn {
   color: grey;
-    border-color: grey;
+  border-color: grey;
 }
+
 .btn:hover {
-    color: #fff;
-    background-color: grey;
-    border-color: grey;
+  color: #fff;
+  background-color: grey;
+  border-color: grey;
 }
+
 .btn:focus {
-    box-shadow: 0 0 0 0.2rem grey;
+  box-shadow: 0 0 0 0.2rem grey;
 }
+
 .btn:active {
-    color: #fff;
-    background-color: grey;
-    border-color: grey;
+  color: #fff;
+  background-color: grey;
+  border-color: grey;
 }
+
 .card {
-    width: 12rem;
-    margin: 1rem .5rem 1rem .5rem;
-    
+  width: 12rem;
+  margin: 1rem 0.5rem 1rem 0.5rem;   
 }
+
 @media only screen and (max-width: 600px) {
-    .card {
-      width: 15rem;
-      margin: 1rem auto;
-    }
+  .card {
+    width: 15rem;
+    margin: 1rem auto;
   }
+}
+
 .order {
-    margin-right: 0;
-    padding-top: 3rem!important;
-    margin-top: 3rem!important;
+  margin-right: 0;
+  padding-top: 3rem!important;
+  margin-top: 3rem!important;
 }

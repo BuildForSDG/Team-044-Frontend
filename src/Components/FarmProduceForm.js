@@ -36,15 +36,12 @@ const FarmProduceForm = () => {
     axios.post(URL, formData, {
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
     }).then((image) => {
-      console.log('image-->>>', image);
       setImageUpload(image.data.url);
-    }).catch((error) => {
-      console.log('error--->', error.message);
-    });
+    }).catch((error) => error);
   };
   const onFormSubmit = (e) => {
     e.preventDefault();
-    console.log(data);
+    // SEND TO BACKEND
   };
   return (
     <div className="my-5">
@@ -65,6 +62,7 @@ const FarmProduceForm = () => {
         </div>
       </form>
       <img src={imageUpload} alt="" className="img-fluid" />
+      {data.produce}
     </div>
   );
 };

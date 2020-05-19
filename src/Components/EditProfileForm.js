@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-
 import '../styles/Dashboard.css';
 
 const EditFarmerProfileForm = () => {
@@ -61,9 +60,7 @@ const EditFarmerProfileForm = () => {
   };
   const onFormSubmit = (e) => {
     e.preventDefault();
-    console.log(data);
     // SEND/UPDATE TO BACKEND
-    alert('Your Profile has been updated');
   };
   return (
     <div className="info">
@@ -109,7 +106,6 @@ const EditFarmerProfileForm = () => {
               required
             />
           </label>
-
         </div>
 
         <div className="form-group">
@@ -124,14 +120,11 @@ const EditFarmerProfileForm = () => {
               <option>Gender</option>
               {genders.map(({ value }) => (
                 <option key={value} value={value}>
-                  {' '}
                   {value}
-                  {' '}
                 </option>
-              )) }
+              ))}
             </select>
           </label>
-
         </div>
 
         <div className="form-group">
@@ -208,6 +201,7 @@ const EditFarmerProfileForm = () => {
           <button type="submit" className="btn">Save</button>
         </div>
       </form>
+      {data.firstName}
     </div>
   );
 };
