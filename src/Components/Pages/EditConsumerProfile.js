@@ -1,6 +1,6 @@
 import React from 'react';
 import SideNavigation from '../SideNav';
-import EditProfileForm from '../EditProfile';
+import EditProfileForm from '../EditProfileForm';
 
 const EditConsumerProfile = () => (
   <div>

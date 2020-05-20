@@ -26,38 +26,11 @@ const EditProfileForm = () => {
     country,
   };
 
-  const onFirstNameChange = (e) => {
+  const onChangeHandler = (e, handler) => {
     const { value } = e.target;
-    setFirstName(value);
+    handler(value);
   };
-  const onLastNameChange = (e) => {
-    const { value } = e.target;
-    setLastName(value);
-  };
-  const onGenderChange = (e) => {
-    const { value } = e.target;
-    setGender(value);
-  };
-  const onDateChange = (e) => {
-    const { value } = e.target;
-    setDob(value);
-  };
-  const onNumberChange = (e) => {
-    const { value } = e.target;
-    setNumber(value);
-  };
-  const onAddressChange = (e) => {
-    const { value } = e.target;
-    setAddress(value);
-  };
-  const onStateChange = (e) => {
-    const { value } = e.target;
-    setState(value);
-  };
-  const onCountryChange = (e) => {
-    const { value } = e.target;
-    setCountry(value);
-  };
+
   const onFormSubmit = (e) => {
     e.preventDefault();
     // SEND/UPDATE TO BACKEND
@@ -73,7 +46,7 @@ const EditProfileForm = () => {
               id="firstName"
               type="text"
               value={firstName}
-              onChange={onFirstNameChange}
+              onChange={(event) => onChangeHandler(event, setFirstName)}
               className="form-control"
               required
             />
@@ -86,7 +59,7 @@ const EditProfileForm = () => {
               id="lastName"
               type="text"
               value={lastName}
-              onChange={onLastNameChange}
+              onChange={(event) => onChangeHandler(event, setLastName)}
               className="form-control"
               required
             />
@@ -112,7 +85,7 @@ const EditProfileForm = () => {
               id="gender"
               className="custom-select mb-3"
               value={gender}
-              onChange={onGenderChange}
+              onChange={(event) => onChangeHandler(event, setGender)}
             >
               <option>Gender</option>
               {genders.map(({ value }) => (
@@ -130,7 +103,7 @@ const EditProfileForm = () => {
               id="dateOfBirth"
               type="date"
               value={dob}
-              onChange={onDateChange}
+              onChange={(event) => onChangeHandler(event, setDob)}
               className="form-control"
               required
             />
@@ -143,7 +116,7 @@ const EditProfileForm = () => {
               id="phoneNumber"
               type="text"
               value={number}
-              onChange={onNumberChange}
+              onChange={(event) => onChangeHandler(event, setNumber)}
               className="form-control"
               required
             />
@@ -156,7 +129,7 @@ const EditProfileForm = () => {
               id="address"
               type="text"
               value={address}
-              onChange={onAddressChange}
+              onChange={(event) => onChangeHandler(event, setAddress)}
               className="form-control"
               required
             />
@@ -169,7 +142,7 @@ const EditProfileForm = () => {
               id="state"
               type="text"
               value={state}
-              onChange={onStateChange}
+              onChange={(event) => onChangeHandler(event, setState)}
               className="form-control"
               required
             />
@@ -182,7 +155,7 @@ const EditProfileForm = () => {
               id="country"
               type="text"
               value={country}
-              onChange={onCountryChange}
+              onChange={(event) => onChangeHandler(event, setCountry)}
               className="form-control"
               required
             />
