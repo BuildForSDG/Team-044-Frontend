@@ -14,11 +14,8 @@ const App = () => (
       <Route exact path="/" component={Home} />
       <Route exact path="/dashboard/investor" component={InvestorDashboard} />
       <Route path="/dashboard/edit" component={EditInvestorProfile} />
-
     </Switch>
-
   </Router>
 );
-
 
 export default App;

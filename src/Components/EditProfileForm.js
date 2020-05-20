@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
-
 import '../styles/Dashboard.css';
-
 
 const EditProfileForm = () => {
   const [firstName, setFirstName] = useState('Adeyemi');
@@ -62,9 +60,7 @@ const EditProfileForm = () => {
   };
   const onFormSubmit = (e) => {
     e.preventDefault();
-    console.log(data);
     // SEND/UPDATE TO BACKEND
-    alert('Your Profile has been updated');
   };
   return (
     <div className="info">
@@ -82,7 +78,6 @@ const EditProfileForm = () => {
               required
             />
           </label>
-
         </div>
         <div className="form-group">
           <label htmlFor="LastName" className="width">
@@ -96,7 +91,6 @@ const EditProfileForm = () => {
               required
             />
           </label>
-
         </div>
         <div className="form-group">
           <label htmlFor="Email" className="width">
@@ -110,9 +104,7 @@ const EditProfileForm = () => {
               required
             />
           </label>
-
         </div>
-
         <div className="form-group">
           <label htmlFor="Gender" className="width">
             Gender
@@ -125,16 +117,12 @@ const EditProfileForm = () => {
               <option>Gender</option>
               {genders.map(({ value }) => (
                 <option key={value} value={value}>
-                  {' '}
                   {value}
-                  {' '}
                 </option>
-              )) }
+              ))}
             </select>
           </label>
-
         </div>
-
         <div className="form-group">
           <label htmlFor="D.O.B" className="width">
             Date of birth
@@ -147,7 +135,6 @@ const EditProfileForm = () => {
               required
             />
           </label>
-
         </div>
         <div className="form-group ">
           <label htmlFor="Phone Number" className="width">
@@ -161,7 +148,6 @@ const EditProfileForm = () => {
               required
             />
           </label>
-
         </div>
         <div className="form-group">
           <label htmlFor="Address" className="width">
@@ -175,7 +161,6 @@ const EditProfileForm = () => {
               required
             />
           </label>
-
         </div>
         <div className="form-group">
           <label htmlFor="State" className="width">
@@ -189,7 +174,6 @@ const EditProfileForm = () => {
               required
             />
           </label>
-
         </div>
         <div className="form-group">
           <label htmlFor="Country" className="width">
@@ -203,12 +187,12 @@ const EditProfileForm = () => {
               required
             />
           </label>
-
         </div>
         <div className="text-center">
           <button type="submit" className="btn">Save</button>
         </div>
       </form>
+      {data.firstName}
     </div>
   );
 };
