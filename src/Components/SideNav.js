@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
 import '../styles/SideNav.css';
 
 const SideNavigation = () => (
@@ -10,23 +9,21 @@ const SideNavigation = () => (
       alt=""
       className="img-fluid"
     />
-    <h4 className="text-center my-4">First Name</h4>
+    <h4 className="text-center my-4 name">First Name</h4>
     <ul className="">
       <hr />
       <li>
-        <Link to="/dashboard/consumer">Dashboard</Link>
+        <Link to="/dashboard/consumer" id="dashboard">Dashboard</Link>
       </li>
       <hr />
       <li className="">
-        <Link to="/dashboard/consumer/edit"> My Profile</Link>
+        <Link to="/dashboard/consumer/edit" id="profile">My Profile</Link>
       </li>
       <hr />
       <li className="">Chats</li>
       <hr />
     </ul>
-
   </div>
 );
-
 
 export default SideNavigation;

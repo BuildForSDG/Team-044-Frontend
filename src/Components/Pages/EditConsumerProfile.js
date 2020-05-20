@@ -1,15 +1,15 @@
 import React from 'react';
 import SideNavigation from '../SideNav';
-import EditProfile from '../EditProfile';
+import EditProfileForm from '../EditProfile';
 
 const EditConsumerProfile = () => (
   <div>
     <div className="row order">
-      <div className="col-5 col-lg-3">
+      <div className="col-5 col-lg-3 side">
         <SideNavigation />
       </div>
-      <div className="col-7 col-lg-9">
-        <EditProfile />
+      <div className="col-7 col-lg-9 main">
+        <EditProfileForm />
       </div>
     </div>
   </div>
