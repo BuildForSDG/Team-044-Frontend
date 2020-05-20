@@ -66,13 +66,13 @@
 
 .card {
   width: 12rem;
-  margin: 1rem 0.5rem 1rem 0.5rem;    
+  margin: 1rem 0.5rem 1rem 0.5rem;
 }
 
 @media only screen and (max-width: 600px) {
   .card {
-  width: 15rem;
-  margin: 1rem auto;
+    width: 15rem;
+    margin: 1rem auto;
   }
 }
 
