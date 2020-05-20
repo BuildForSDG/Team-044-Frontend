@@ -26,38 +26,11 @@ const EditProfileForm = () => {
     country,
   };
 
-  const onFirstNameChange = (e) => {
+  const onChangeHandler = (e, handler) => {
     const { value } = e.target;
-    setFirstName(value);
+    handler(value);
   };
-  const OnLastNameChange = (e) => {
-    const { value } = e.target;
-    setLastName(value);
-  };
-  const onGenderChange = (e) => {
-    const { value } = e.target;
-    setGender(value);
-  };
-  const onDateChange = (e) => {
-    const { value } = e.target;
-    setDob(value);
-  };
-  const onNumberChange = (e) => {
-    const { value } = e.target;
-    setNumber(value);
-  };
-  const onAddressChange = (e) => {
-    const { value } = e.target;
-    setAddress(value);
-  };
-  const onStateChange = (e) => {
-    const { value } = e.target;
-    setState(value);
-  };
-  const onCountryChange = (e) => {
-    const { value } = e.target;
-    setCountry(value);
-  };
+
   const onFormSubmit = (e) => {
     e.preventDefault();
     // SEND/UPDATE TO BACKEND
@@ -67,33 +40,33 @@ const EditProfileForm = () => {
       <h2>EDIT MY PROFILE</h2>
       <form onSubmit={onFormSubmit}>
         <div className="form-group">
-          <label htmlFor="FirstName" className="width">
+          <label htmlFor="firstName" className="width">
             First Name
             <input
               id="firstName"
               type="text"
               value={firstName}
-              onChange={onFirstNameChange}
+              onChange={(event) => onChangeHandler(event, setFirstName)}
               className="form-control"
               required
             />
           </label>
         </div>
         <div className="form-group">
-          <label htmlFor="LastName" className="width">
+          <label htmlFor="lastName" className="width">
             Last Name
             <input
               id="lastName"
               type="text"
               value={lastName}
-              onChange={OnLastNameChange}
+              onChange={(event) => onChangeHandler(event, setLastName)}
               className="form-control"
               required
             />
           </label>
         </div>
         <div className="form-group">
-          <label htmlFor="Email" className="width">
+          <label htmlFor="email" className="width">
             Email
             <input
               id="email"
@@ -106,13 +79,13 @@ const EditProfileForm = () => {
           </label>
         </div>
         <div className="form-group">
-          <label htmlFor="Gender" className="width">
+          <label htmlFor="gender" className="width">
             Gender
             <select
               id="gender"
               className="custom-select mb-3"
               value={gender}
-              onChange={onGenderChange}
+              onChange={(event) => onChangeHandler(event, setGender)}
             >
               <option>Gender</option>
               {genders.map(({ value }) => (
@@ -124,65 +97,65 @@ const EditProfileForm = () => {
           </label>
         </div>
         <div className="form-group">
-          <label htmlFor="D.O.B" className="width">
+          <label htmlFor="dateOfBirth" className="width">
             Date of birth
             <input
               id="dateOfBirth"
               type="date"
               value={dob}
-              onChange={onDateChange}
+              onChange={(event) => onChangeHandler(event, setDob)}
               className="form-control"
               required
             />
           </label>
         </div>
         <div className="form-group ">
-          <label htmlFor="Phone Number" className="width">
+          <label htmlFor="phoneNumber" className="width">
             Phone Number
             <input
               id="phoneNumber"
               type="text"
               value={number}
-              onChange={onNumberChange}
+              onChange={(event) => onChangeHandler(event, setNumber)}
               className="form-control"
               required
             />
           </label>
         </div>
         <div className="form-group">
-          <label htmlFor="Address" className="width">
+          <label htmlFor="address" className="width">
             Address
             <input
               id="address"
               type="text"
               value={address}
-              onChange={onAddressChange}
+              onChange={(event) => onChangeHandler(event, setAddress)}
               className="form-control"
               required
             />
           </label>
         </div>
         <div className="form-group">
-          <label htmlFor="State" className="width">
+          <label htmlFor="state" className="width">
             State/City
             <input
               id="state"
               type="text"
               value={state}
-              onChange={onStateChange}
+              onChange={(event) => onChangeHandler(event, setState)}
               className="form-control"
               required
             />
           </label>
         </div>
         <div className="form-group">
-          <label htmlFor="Country" className="width">
+          <label htmlFor="country" className="width">
             Country
             <input
               id="country"
               type="text"
               value={country}
-              onChange={onCountryChange}
+              onChange={(event) => onChangeHandler(event, setCountry)}
               className="form-control"
               required
             />
