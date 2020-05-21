@@ -24,8 +24,6 @@ module.exports = {
   ],
   rules: {
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-    "indent": ["error, 2"],
-    "no-long-block": "error",
     "comma-spacing": [2, {"before": false, "after": true}]
   },
 };

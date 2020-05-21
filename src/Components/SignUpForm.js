@@ -24,31 +24,17 @@ const SignUpForm = () => {
     { value: 'Investor' },
   ]);
 
-  const onFirstNameChange = (e) => {
+  const onChangeHandler = (e, handler) => {
     const { value } = e.target;
-    setFirstName(value);
+    handler(value);
   };
-  const onLastNameChange = (e) => {
-    const { value } = e.target;
-    setLastName(value);
-  };
-  const onServiceChange = (e) => {
-    const { value } = e.target;
-    setService(value);
-  };
-  const onEmailChange = (e) => {
-    const { value } = e.target;
-    setEmail(value);
-  };
+
   const onPasswordChange = (e) => {
     const { value } = e.target;
     setPassword(value);
     setWarning('Your passwword must contain at least 6 characters, including 1 special character & 1 number');
   };
-  const onConfirmPasswordChange = (e) => {
-    const { value } = e.target;
-    setConfirmPassword(value);
-  };
+
   const onFormSubmit = (e) => {
     e.preventDefault();
     if (password === confirmPassword && password.match(/(?=.*?[0-9])(?=.*?[#?!@$%^&*-.]).{8,}$/)) {
@@ -69,7 +55,7 @@ const SignUpForm = () => {
             placeholder="First-Name"
             className="form-control"
             value={firstname}
-            onChange={onFirstNameChange}
+            onChange={(event) => onChangeHandler(event, setFirstName)}
             required
           />
         </div>
@@ -80,7 +66,7 @@ const SignUpForm = () => {
             placeholder="Last-Name"
             className="form-control"
             value={lastname}
-            onChange={onLastNameChange}
+            onChange={(event) => onChangeHandler(event, setLastName)}
             required
           />
         </div>
@@ -91,7 +77,7 @@ const SignUpForm = () => {
             placeholder="Email"
             className="form-control"
             value={email}
-            onChange={onEmailChange}
+            onChange={(event) => onChangeHandler(event, setEmail)}
             required
           />
         </div>
@@ -114,12 +100,16 @@ const SignUpForm = () => {
             placeholder="Confirm-Password"
             className="form-control"
             value={confirmPassword}
-            onChange={onConfirmPasswordChange}
+            onChange={(event) => onChangeHandler(event, setConfirmPassword)}
             required
           />
         </div>
 
-        <select className="custom-select mb-3" value={service} onChange={onServiceChange}>
+        <select
+          className="custom-select mb-3"
+          value={service}
+          onChange={(event) => onChangeHandler(event, setService)}
+        >
           <option>Choose Service</option>
           {services.map(({ value }) => (
             <option key={value} value={value} id={value}>
@@ -140,10 +130,7 @@ const SignUpForm = () => {
         </p>
         <p>{data.firstname}</p>
       </form>
-
-
     </div>
-
   );
 };
 
