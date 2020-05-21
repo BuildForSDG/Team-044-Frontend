@@ -24,6 +24,5 @@ module.exports = {
   ],
   rules: {
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-    "comma-spacing": [2, {"before": false, "after": true}]
   },
 };
