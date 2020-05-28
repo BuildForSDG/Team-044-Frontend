@@ -1,38 +1,31 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-const ChatInput = () => {
-  const [text, setText] = useState('');
+const ChatInput = ({ message, setMessage, sendMessage }) => (
+  <div className="chat-input">
+    <form
+      className="form py-3 px-auto"
+      onSubmit={(e) => sendMessage(e)}
 
-  const onTextChange = (e) => {
-    const { value } = e.target;
-    setText(value);
-  };
-  const onChatSubmit = (e) => {
-    e.preventDefault();
-    // BACKEND CONNECTION
-  };
-  return (
-    <div className="chat-input">
-      <form className="form py-3 px-auto" onSubmit={onChatSubmit}>
-        <input
-          id="text"
-          type="text"
-          value={text}
-          onChange={onTextChange}
-          className="form-control"
-          placeholder="type somthing here..."
-        />
-        <div className="button-wrapper">
-          <button
-            type="submit"
-            className="btn"
-          >
-            <i className="bx bxs-send" />
-          </button>
-        </div>
-      </form>
-    </div>
-  );
-};
+    >
+      <input
+        id="text"
+        type="text"
+        value={message}
+        onChange={(e) => setMessage(e.target.value)}
+        className="form-control"
+        placeholder="type somthing here..."
+      />
+      <div className="button-wrapper">
+        <button
+          type="submit"
+          className="btn"
+
+        >
+          <i className="bx bxs-send" />
+        </button>
+      </div>
+    </form>
+  </div>
+);
 
 export default ChatInput;

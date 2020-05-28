@@ -6,15 +6,15 @@ import axios from 'axios';
 import { chatee } from '../../actions';
 import '../../styles/Chat.css';
 
-const ChatList = () => {
+const MockChatList = () => {
   const username = useSelector((state) => state.userLoggedName);
+  const dispatch = useDispatch();
 
   const chats = true;
   const [fullData, setFullData] = useState([]);
-  const dispatch = useDispatch();
 
   useEffect(() => {
-    axios.get('http://localhost:4000/view')
+    axios.get('http://localhost:4000/chatlist')
       .then((res) => {
         const { data } = res;
         setFullData(data);
@@ -30,24 +30,23 @@ const ChatList = () => {
       {chats
         ? (
           <div>
-            {fullData.map(({ name, _id }) => (
+            {fullData.map(({ chatlist, _id }) => (
               <div key={_id}>
                 <hr />
                 <Link
-                  to={`/dashboard/chat/${username.toLocaleLowerCase()}/${name.toLowerCase()}`}
-                  onClick={() => dispatch(chatee(name))}
+                  to={`/dashboard/chat/${username.toLocaleLowerCase()}/${chatlist.toLowerCase()}`}
+                  onClick={() => dispatch(chatee(chatlist))}
                 >
                   <div className="chat-list">
                     <i className="bx bxs-user" />
                     <p>
-                      {name}
+                      {chatlist}
                     </p>
                     <p>Something here</p>
                   </div>
                 </Link>
               </div>
             ))}
-            <hr />
           </div>
         )
         : <p className="empty">Your chat history is empty</p>}
@@ -55,4 +54,4 @@ const ChatList = () => {
   );
 };
 
-export default ChatList;
+export default MockChatList;

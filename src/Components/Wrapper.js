@@ -14,7 +14,7 @@ const Wrapper = () => (
               <Link to="/">Home</Link>
             </li>
             <li>
-              <Link to="/services">Services</Link>
+              <Link to="/mockregister">Register</Link>
             </li>
             <li>
               <Link to="/products">Products</Link>
