@@ -14,6 +14,7 @@ const Home = () => (
           <br />
           and Consumers around the World
         </h1>
+
         <Link to="/sign-up" className="btn-get-started scrollto">
           Get Started
         </Link>
