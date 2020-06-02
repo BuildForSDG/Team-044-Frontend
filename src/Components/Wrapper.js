@@ -14,17 +14,45 @@ const Wrapper = () => (
             <li className="active">
               <Link to="/">Home</Link>
             </li>
+
+            <li className="services">
+=======
             <li>
+
               <Link to="/services">Services</Link>
             </li>
             <li>
               <Link to="/products">Products</Link>
             </li>
+
+            <li className="drop-down">
+              <Link to="/">Account</Link>
+              <ul>
+                <li>
+                  <Link to="/">Sign Up</Link>
+                </li>
+                <li className="drop-down">
+                  <Link to="/">Sign In</Link>
+                  <ul>
+                    <li>
+                      <Link to="/">Investor</Link>
+                    </li>
+                    <li>
+                      <Link to="/">Farmer</Link>
+                    </li>
+                    <li>
+                      <Link to="/">Customers</Link>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+=======
             <li>
               <Link to="/">Sign Up</Link>
             </li>
             <li>
               <Link to="/">Sign In</Link>
+
             </li>
           </ul>
         </nav>
@@ -32,6 +60,8 @@ const Wrapper = () => (
     </header>
   </div>
 );
+
+
 
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
@@ -94,6 +124,7 @@ const Wrapper = () => {
     </div>
   );
 };
+
 
 
 export default Wrapper;
