@@ -1,18 +1,32 @@
-import React from "react";
-import Wrapper from "./Components/Wrapper";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-//Pages
-import Home from "./Components/Pages/Home";
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
+import Wrapper from './Components/Wrapper';
+import rootReducer from './reducers/rootReducer';
 
-function App() {
-  return (
+// Pages
+import Home from './Components/Pages/Home';
+import SignUp from './Components/Pages/SignUp';
+import SignIn from './Components/Pages/SignIn';
+
+// Redux store
+const store = createStore(
+  rootReducer,
+);
+
+const App = () => (
+  <Provider store={store}>
     <Router>
-      <Wrapper>
-        <Route exact={true} path="/" component={Home} />
-      </Wrapper>
+      <Wrapper />
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route path="/sign-up" component={SignUp} />
+        <Route path="/sign-in" component={SignIn} />
+      </Switch>
     </Router>
-  );
-}
+  </Provider>
+);
 
 export default App;
