@@ -1,14 +1,14 @@
 body {
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   color: #444444;
 }
 
 a {
-  color: #084933;
+  color: #0f2719;
 }
 
 a:hover {
-  color: #ea6981;
+  color: #307055;
   text-decoration: none;
 }
 
@@ -18,7 +18,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Nunito", sans-serif;
+  font-family: 'Nunito', sans-serif;
 }
 
 /*--------------------------------------------------------------
@@ -41,7 +41,7 @@ h6 {
   width: 40px;
   height: 40px;
   border-radius: 50px;
-  background: #084933;
+  background: #0f2719;
   color: #fff;
   transition: all 0.4s;
 }
@@ -57,6 +57,22 @@ h6 {
   transition: all 0.5s;
   z-index: 997;
   padding: 20px 0;
+}
+
+/* service */
+.services .title a {
+  color: #111;
+}
+
+.services .description {
+  font-size: 15px;
+  line-height: 28px;
+  margin-bottom: 0;
+}
+
+.services .icon-box:hover .title a,
+.services .icon-box:hover .description {
+  color: #fff;
 }
 
 #header .logo {
@@ -89,7 +105,7 @@ h6 {
   color: #493c3e;
 }
 
-@media (max-width: 992px) {
+@media screen and (max-width: 992px) {
   #header .logo {
     font-size: 28px;
   }
@@ -123,17 +139,17 @@ h6 {
   font-size: 15px;
   padding: 0 4px;
   letter-spacing: 0.4px;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 .nav-menu > ul > li > a:before {
-  content: "";
+  content: '';
   position: absolute;
   width: 100%;
   height: 2px;
   bottom: -6px;
   left: 0;
-  background-color: #084933;
+  background-color: #0f2719;
   visibility: hidden;
   transform: scaleX(0);
   transition: all 0.3s ease-in-out 0s;
@@ -181,11 +197,11 @@ h6 {
 .nav-menu .drop-down ul a:hover,
 .nav-menu .drop-down ul .active > a,
 .nav-menu .drop-down ul li:hover > a {
-  color: #084933;
+  color: #0f2719;
 }
 
 .nav-menu .drop-down > a:after {
-  content: "\ea99";
+  content: '\ea99';
   font-family: IcoFont;
   padding-left: 5px;
 }
@@ -206,7 +222,7 @@ h6 {
 }
 
 .nav-menu .drop-down .drop-down > a:after {
-  content: "\eaa0";
+  content: '\eaa0';
   font-family: IcoFont;
   position: absolute;
   right: 15px;
@@ -217,7 +233,7 @@ h6 {
   color: #493c3e;
 }
 
-@media (max-width: 1366px) {
+@media screen and (max-width: 1366px) {
   .nav-menu .drop-down .drop-down ul {
     left: -90%;
   }
@@ -225,7 +241,7 @@ h6 {
     left: -100%;
   }
   .nav-menu .drop-down .drop-down > a:after {
-    content: "\ea9d";
+    content: '\ea9d';
   }
 }
 
@@ -246,7 +262,7 @@ h6 {
 }
 
 .mobile-nav-toggle i {
-  color: #084933;
+  color: #0f2719;
 }
 
 .mobile-nav {
@@ -283,12 +299,12 @@ h6 {
 .mobile-nav a:hover,
 .mobile-nav .active > a,
 .mobile-nav li:hover > a {
-  color: #084933;
+  color: #0f2719;
   text-decoration: none;
 }
 
 .mobile-nav .drop-down > a:after {
-  content: "\ea99";
+  content: '\ea99';
   font-family: IcoFont;
   padding-left: 10px;
   position: absolute;
@@ -296,7 +312,7 @@ h6 {
 }
 
 .mobile-nav .active.drop-down > a:after {
-  content: "\eaa1";
+  content: '\eaa1';
 }
 
 .mobile-nav .drop-down > a {
@@ -344,13 +360,13 @@ h6 {
 #hero {
   width: 100%;
   height: 100vh;
-  background: url("../img/hero-bg.jpg") top center;
+  background: url('../img/hero-bg.jpg') top center;
   background-size: cover;
   position: relative;
 }
 
 #hero:before {
-  content: "";
+  content: '';
   background: rgba(0, 0, 0, 0.6);
   position: absolute;
   bottom: 0;
@@ -373,6 +389,27 @@ h6 {
   padding: 0 15px;
 }
 
+/* services area  */
+.section-title h2 {
+  font-size: 13px;
+  letter-spacing: 1px;
+  font-weight: 700;
+  padding: 8px 20px;
+  line-height: 1;
+  margin: 0;
+  background: #b6c2b0;
+  color: #0f2719;
+  display: inline-block;
+  text-transform: uppercase;
+  border-radius: 50px;
+}
+
+.section-title h3 {
+  margin: 15px 0 0 0;
+  font-size: 32px;
+  font-weight: 700;
+}
+
 #hero h3 {
   background: rgba(255, 255, 255, 0.1);
   color: #fff;
@@ -384,7 +421,7 @@ h6 {
 
 #hero h1 {
   margin: 0 0 10px 0;
-  font-size: 35px;
+  font-size: 48px;
   font-weight: 700;
   line-height: 56px;
   text-transform: uppercase;
@@ -398,7 +435,7 @@ h6 {
 }
 
 #hero .btn-get-started {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   text-transform: uppercase;
   font-weight: 400;
   font-size: 13px;
@@ -412,17 +449,17 @@ h6 {
 }
 
 #hero .btn-get-started:hover {
-  background: #084933;
-  border: 2px solid #084933;
+  background: #0f2719;
+  border: 2px solid #0f2719;
 }
 
-@media (min-width: 1024px) {
+@media screen and (min-width: 1024px) {
   #hero {
     background-attachment: fixed;
   }
 }
 
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
   #hero h3 {
     font-size: 22px;
   }
@@ -430,9 +467,104 @@ h6 {
     font-size: 28px;
     line-height: 36px;
   }
+
   #hero h2 {
     font-size: 18px;
     line-height: 24px;
     margin-bottom: 30px;
   }
+}
+
+/*--------------------------------------------------------------
+# Sections General
+--------------------------------------------------------------*/
+section {
+  padding: 60px 0;
+}
+
+.section-bg {
+  background-color: white;
+}
+
+.section-title {
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+.section-title h3 span {
+  color: #0f2719;
+}
+
+.section-title p {
+  margin: 15px auto 0 auto;
+  font-weight: 600;
+}
+
+@media screen and (min-width: 1024px) {
+  .section-title p {
+    width: 50%;
+  }
+}
+
+/*--------------------------------------------------------------
+# Services
+--------------------------------------------------------------*/
+.services {
+  padding-bottom: 30px;
+}
+
+.services .icon-box {
+  padding: 60px 40px;
+  position: relative;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 2px 0 35px 0 rgba(68, 88, 144, 0.12);
+  transition: all 0.3s ease-in-out;
+  border-radius: 8px;
+  z-index: 1;
+  text-align: center;
+}
+
+.services .icon-box::before {
+  content: '';
+  position: absolute;
+  background: #fdeff2;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  top: 100%;
+  transition: all 0.4s;
+  z-index: -1;
+}
+
+.services .icon-box:hover::before {
+  background: #0f2719;
+  top: 0;
+}
+
+.services .icon {
+  margin-bottom: 15px;
+}
+
+.services .icon i {
+  font-size: 48px;
+  line-height: 1;
+  color: #0f2719;
+  transition: all 0.3s ease-in-out;
+}
+
+.services .title {
+  font-weight: 700;
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+.services .icon-box:hover .icon i {
+  color: #fff;
+}
+
+.row {
+  display: flex;
+  align-items: cenetr;
+  justify-content: center;
 }

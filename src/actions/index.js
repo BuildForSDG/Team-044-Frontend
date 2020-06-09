@@ -1,3 +1,4 @@
+
 // ACTIONS
 export const chatee = (nr) => ({
   type: 'CHATEE',
@@ -18,3 +19,10 @@ export const userLoggedinId = (nr) => ({
   type: 'USERLOGGEDID',
   payload: nr,
 });
+
+const service = (nr) => ({
+  type: 'SERVICE',
+  payload: nr,
+});
+export default service;
+
