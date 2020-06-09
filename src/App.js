@@ -1,9 +1,18 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
+import Wrapper from './Components/Wrapper';
+
+// Pages
+import Home from './Components/Pages/Home';
+import ConsumerDashboard from './Components/Pages/ConsumerDashboard';
+import EditConsumerProfile from './Components/Pages/EditConsumerProfile';
+
+
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import Wrapper from './Components/Wrapper';
+
 
 // Pages
 import Home from './Components/Pages/Home';
@@ -78,6 +87,10 @@ const App = () => (
       <Switch>
         <Route exact path="/" component={Home} />
 
+        <Route exact path="/dashboard/consumer" component={ConsumerDashboard} />
+        <Route path="/dashboard/consumer/edit" component={EditConsumerProfile} />
+
+
         <Route path="/mockregister" component={MockRegister} />
         <Route path="/mockchatlist" component={MockChatList} />
         <Route exact path="/dashboard/chat" component={ChatList} />
@@ -89,6 +102,7 @@ const App = () => (
 
         <Route path="/sign-up" component={SignUp} />
         <Route path="/sign-in" component={SignIn} />
+
       </Switch>
     </Router>
   </Provider>
