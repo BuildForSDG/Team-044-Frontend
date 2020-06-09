@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 import '../styles/Dashboard.css';
 
+
+const EditFarmerProfileForm = () => {
+
 const EditProfileForm = () => {
+
   const [firstName, setFirstName] = useState('Adeyemi');
   const [lastName, setLastName] = useState('Kuti');
   const email = 'YemiKuts@gmail.com';
@@ -51,6 +55,7 @@ const EditProfileForm = () => {
               required
             />
           </label>
+
         </div>
         <div className="form-group">
           <label htmlFor="LastName" className="width">
@@ -64,6 +69,7 @@ const EditProfileForm = () => {
               required
             />
           </label>
+
         </div>
         <div className="form-group">
           <label htmlFor="Email" className="width">
@@ -78,6 +84,7 @@ const EditProfileForm = () => {
             />
           </label>
         </div>
+
         <div className="form-group">
           <label htmlFor="Gender" className="width">
             Gender
@@ -96,6 +103,7 @@ const EditProfileForm = () => {
             </select>
           </label>
         </div>
+
         <div className="form-group">
           <label htmlFor="D.O.B" className="width">
             Date of birth
@@ -108,6 +116,7 @@ const EditProfileForm = () => {
               required
             />
           </label>
+
         </div>
         <div className="form-group ">
           <label htmlFor="Phone Number" className="width">
@@ -121,6 +130,7 @@ const EditProfileForm = () => {
               required
             />
           </label>
+
         </div>
         <div className="form-group">
           <label htmlFor="Address" className="width">
@@ -134,6 +144,7 @@ const EditProfileForm = () => {
               required
             />
           </label>
+
         </div>
         <div className="form-group">
           <label htmlFor="State" className="width">
@@ -147,6 +158,7 @@ const EditProfileForm = () => {
               required
             />
           </label>
+
         </div>
         <div className="form-group">
           <label htmlFor="Country" className="width">
@@ -160,14 +172,23 @@ const EditProfileForm = () => {
               required
             />
           </label>
+
         </div>
         <div className="text-center">
           <button type="submit" className="btn">Save</button>
         </div>
       </form>
+
+      {data.firstName}
+
       <p>{data.firstName}</p>
+
     </div>
   );
 };
 
+
+export default EditFarmerProfileForm;
+
 export default EditProfileForm;
+

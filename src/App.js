@@ -5,6 +5,16 @@ import Wrapper from './Components/Wrapper';
 
 // Pages
 import Home from './Components/Pages/Home';
+import FarmerDashboard from './Components/Pages/FarmerDashboard';
+import EditFarmerProfile from './Components/Pages/EditFarmerProfile';
+import FarmProduce from './Components/Pages/FarmProduce';
+
+
+
+import Wrapper from './Components/Wrapper';
+
+// Pages
+import Home from './Components/Pages/Home';
 import ConsumerDashboard from './Components/Pages/ConsumerDashboard';
 import EditConsumerProfile from './Components/Pages/EditConsumerProfile';
 
@@ -53,6 +63,13 @@ const App = () => (
     <Wrapper />
     <Switch>
       <Route exact path="/" component={Home} />
+
+      <Route exact path="/dashboard" component={FarmerDashboard} />
+      <Route path="/dashboard/edit" component={EditFarmerProfile} />
+      <Route path="/dashboard/products" component={FarmProduce} />
+    </Switch>
+  </Router>
+
 
       <Route path="/services" component={Services} />
     </Switch>
@@ -106,6 +123,7 @@ const App = () => (
       </Switch>
     </Router>
   </Provider>
+
 
 
 );

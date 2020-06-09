@@ -21,6 +21,10 @@ const Wrapper = () => (
 
 
             <li>
+              <Link to="/services">Services</Link>
+
+
+            <li>
               <Link to="/mockregister">Register</Link>
 
 
@@ -31,10 +35,16 @@ const Wrapper = () => (
               <Link to="/services">Services</Link>
 
 
+
             </li>
             <li>
               <Link to="/products">Products</Link>
             </li>
+
+            <li>
+              <Link to="/dashboard">Farmer Dashboard</Link>
+            </li>
+
 
             <li>
               <Link to="/dashboard/consumer">Consumer Dashboard</Link>
@@ -44,6 +54,7 @@ const Wrapper = () => (
             <li>
               <Link to="/dashboard/chat">Chat</Link>
             </li>
+
 
 
             <li className="drop-down">
@@ -64,6 +75,13 @@ const Wrapper = () => (
                     </li>
                     <li>
 
+
+                    </li>
+                    <li>
+                      <Link to="/">Farmer</Link>
+                    </li>
+                    <li>
+
                     </li>
                     <li>
                       <Link to="/">Farmer</Link>
@@ -75,6 +93,7 @@ const Wrapper = () => (
                   </ul>
                 </li>
               </ul>
+\
 
 
             <li>
@@ -85,6 +104,7 @@ const Wrapper = () => (
 
 
 
+\
             </li>
           </ul>
         </nav>
@@ -92,6 +112,7 @@ const Wrapper = () => (
     </header>
   </div>
 );
+
 
 
 
@@ -160,5 +181,6 @@ const Wrapper = () => {
 };
 
 
+\
 
 export default Wrapper;
