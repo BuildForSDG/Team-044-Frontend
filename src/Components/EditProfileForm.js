@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 import '../styles/Dashboard.css';
 
+
 const EditFarmerProfileForm = () => {
+
+const EditProfileForm = () => {
+
   const [firstName, setFirstName] = useState('Adeyemi');
   const [lastName, setLastName] = useState('Kuti');
   const email = 'YemiKuts@gmail.com';
@@ -25,6 +29,7 @@ const EditFarmerProfileForm = () => {
     state,
     country,
   };
+
   const onChangeHandler = (e, handler) => {
     const { value } = e.target;
     handler(value);
@@ -173,9 +178,17 @@ const EditFarmerProfileForm = () => {
           <button type="submit" className="btn">Save</button>
         </div>
       </form>
+
       {data.firstName}
+
+      <p>{data.firstName}</p>
+
     </div>
   );
 };
 
+
 export default EditFarmerProfileForm;
+
+export default EditProfileForm;
+
