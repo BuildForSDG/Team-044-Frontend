@@ -1,4 +1,5 @@
 
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 
@@ -15,14 +16,23 @@ const Wrapper = () => (
               <Link to="/">Home</Link>
             </li>
 
+            <li>
+              <Link to="/mockregister">Register</Link>
+
+
             <li className="services">
-=======
+
             <li>
 
               <Link to="/services">Services</Link>
+
             </li>
             <li>
               <Link to="/products">Products</Link>
+            </li>
+
+            <li>
+              <Link to="/dashboard/chat">Chat</Link>
             </li>
 
             <li className="drop-down">
@@ -46,12 +56,13 @@ const Wrapper = () => (
                   </ul>
                 </li>
               </ul>
-=======
+
             <li>
               <Link to="/">Sign Up</Link>
             </li>
             <li>
               <Link to="/">Sign In</Link>
+
 
             </li>
           </ul>
@@ -60,6 +71,7 @@ const Wrapper = () => (
     </header>
   </div>
 );
+
 
 
 

@@ -2,6 +2,10 @@ module.exports = {
   env: {
     browser: true,
     es6: true,
+
+    jest: true
+  },
+
     jest: true,
   },
 
@@ -9,6 +13,7 @@ module.exports = {
   globals: {
     Atomics: "readonly",
     SharedArrayBuffer: "readonly",
+
 
   extends: [
     'plugin:react/recommended',
@@ -23,6 +28,19 @@ module.exports = {
     ecmaFeatures: {
       jsx: true,
     },
+
+    ecmaVersion: 11,
+    sourceType: 'module',
+  },
+  plugins: [
+    'react',
+    "react-hooks"
+  ],
+  rules: {
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+
 
     ecmaVersion: 2018,
     sourceType: "module",
@@ -44,7 +62,6 @@ module.exports = {
 
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-
 
   },
 };
