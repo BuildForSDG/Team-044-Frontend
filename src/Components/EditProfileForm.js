@@ -4,7 +4,6 @@ import '../styles/Dashboard.css';
 
 const EditFarmerProfileForm = () => {
 
-const EditProfileForm = () => {
 
   const [firstName, setFirstName] = useState('Adeyemi');
   const [lastName, setLastName] = useState('Kuti');
@@ -190,5 +189,4 @@ const EditProfileForm = () => {
 
 export default EditFarmerProfileForm;
 
-export default EditProfileForm;
 
