@@ -1,44 +1,44 @@
 
 
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 const Wrapper = () => (
   <div>
     <header id="header" className="fixed-top">
       <div className="container d-flex align-items-center">
         <h1 className="logo mr-auto">
-          <Link to="index.html">Team-044 Product</Link>
+          <NavLink to="index.html">Team-044 Product</NavLink>
         </h1>
         <nav className="nav-menu d-none d-lg-block">
           <ul>
             <li className="active">
-              <Link to="/">Home</Link>
+              <NavLink to="/">Home</NavLink>
             </li>
             <li>
-              <Link to="/services">Services</Link>
+              <NavLink to="/services">Services</NavLink>
             </li>
             <li>
-              <Link to="/products">Products</Link>
-            </li>
-
-            <li>
-              <Link to="/dashboard">Farmer Dashboard</Link>
+              <NavLink to="/products">Products</NavLink>
             </li>
 
             <li>
-              <Link to="/dashboard/consumer">Consumer Dashboard</Link>
+              <NavLink to="/dashboard">Farmer Dashboard</NavLink>
+            </li>
+
+            <li>
+              <NavLink to="/dashboard/consumer">Consumer Dashboard</NavLink>
             </li>
   
                 <li>
-                  <Link to="/sign-up">Sign Up</Link>
+                  <NavLink to="/sign-up">Sign Up</NavLink>
                 </li>
                 <li>
-                  <Link to="/sign-in">Sign In</Link>
+                  <NavLink to="/sign-in">Sign In</NavLink>
                 </li>
                 
               <li>
-              <Link to="/">Sign Out</Link>
+              <NavLink to="/">Sign Out</NavLink>
             </li>
           </ul>
         </nav>

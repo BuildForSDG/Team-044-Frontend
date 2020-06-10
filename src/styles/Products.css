@@ -4,16 +4,40 @@
 }
 
 .row {
-  justify-content: center;
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .card {
-  width: 15rem;
-  margin-left: 1rem;
-  margin-right: 1rem;
+  width: 18rem;
+
 }
 
-@media (min-width: 320px) and (max-width: 700px) {
+.button {
+  width: 6rem
+}
+
+.fix {
+  width: 100%;
+}
+
+.load {
+  width: 50%;
+  height: 100%;
+  margin: 5% auto;
+}
+
+.main-wrapper {
+  width: 100%;
+  margin: 10% auto;
+}
+
+.left {
+  display: inline-grid;
+}
+
+/* @media (min-width: 320px) and (max-width: 700px) {
   .card {
     margin-left: 1.5rem;
     margin-right: 1.5rem;
@@ -35,7 +59,7 @@
     width: 90%;
     margin: 5% auto;
   }
-}
+} */
 
 .link {
   text-align: center;
@@ -64,7 +88,7 @@
 
 .grid {
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
 }
 
 .carousel {

@@ -1,91 +1,68 @@
-import React from 'react';
+/* eslint-disable no-unused-vars */
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+
+import { useDispatch } from 'react-redux';
+import axios from 'axios';
+// import Loader from '../LoaderIcon';
+import useLocalState from '../../utils/localstorage';
+
 import '../../styles/Products.css';
 
-
 const Products = () => {
-  const showcase = [
-    {
-      img: 'https://images.unsplash.com/photo-1472653525502-fc569e405a74?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
-      product: 'carrot',
-      price: '$899.00',
-      id: 'one',
-    },
+  const [fullData, setFullData] = useState(null);
+  const [linkId, setLinkId] = useState(false);
+const [id, setId] = useLocalState('product-id');
 
-    {
-      img: 'https://images.unsplash.com/photo-1472653525502-fc569e405a74?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
-      product: 'carrot',
-      price: '$899.00',
-      id: 'two',
-    },
 
-    {
-      img: 'https://images.unsplash.com/photo-1472653525502-fc569e405a74?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
-      product: 'carrot',
-      price: '$899.00',
-      id: 'three',
-    },
+  useEffect(() => {
+    axios.get('http://localhost:4000/products')
+      .then((response) => {
+        const { data } = response;
+        setFullData(data);
+      })
+      .catch((error) => {
+        console.log('error ---->>>', error.message);
+      });
+  }, []);
 
-    {
-      img: 'https://images.unsplash.com/photo-1472653525502-fc569e405a74?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
-      product: 'carrot',
-      price: '$899.00',
-      id: 'four',
-    },
-
-    {
-      img: 'https://images.unsplash.com/photo-1472653525502-fc569e405a74?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
-      product: 'carrot',
-      price: '$899.00',
-      id: 'five',
-    },
-
-    {
-      img: 'https://images.unsplash.com/photo-1472653525502-fc569e405a74?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
-      product: 'carrot',
-      price: '$899.00',
-      id: 'six',
-    },
-
-    {
-      img: 'https://images.unsplash.com/photo-1472653525502-fc569e405a74?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
-      product: 'carrot',
-      price: '$899.00',
-      id: 'seven',
-    },
-
-    {
-      img: 'https://images.unsplash.com/photo-1472653525502-fc569e405a74?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
-      product: 'carrot',
-      price: '$899.00',
-      id: 'eight',
-    },
-  ];
   return (
-    <div className="center">
-      <h1>Showcase</h1>
-      <div className="row mx-3">
-        {showcase.map(({
-          img, product, price, id,
-        }) => (
-          <div className="card mb-5 " key={id}>
-            <img
-              className="img-fluid"
-              src={img}
-              alt="A product"
-            />
-            <div className="card-body">
-              <div className="grid">
-                <p className="card-title">{product}</p>
-                <p>{price}</p>
+    <div className="main-wrapper">
+        <div className="center">
+          <div className="row">
+            {fullData.map(({
+              image, name, price, _id,
+            }) => (
+
+              <div
+                key={_id}
+                className="col-6 col-lg-3 py-4 px-2.5"
+              >
+                <Link
+                  to={`/products/display/${_id}`}
+                  onClick={() => {
+                    setId(_id);
+                    setLinkId(true);
+                  }}
+                >
+                  <div>
+                    <img
+                      className="img-fluid"
+                      src={image[0]}
+                      alt="A product"
+                    />
+                  </div>
+                  <div className="grid">
+                    <p>{name}</p>
+                    <p>{price}</p>
+                  </div>
+                </Link>
+
               </div>
-              <div className="text-center">
-                <Link to="/products/display" className="btn link">Purchase</Link>
-              </div>
-            </div>
+            ))}
           </div>
-        ))}
-      </div>
+        </div>
+    
     </div>
   );
 };

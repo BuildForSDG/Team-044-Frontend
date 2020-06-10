@@ -1,28 +1,11 @@
-
-// ACTIONS
-export const chatee = (nr) => ({
-  type: 'CHATEE',
+export const userId = (nr) => ({
+  type: 'USERID',
   payload: nr,
 });
 
-export const welcome = (nr) => ({
-  type: 'WELCOME',
+export const chatPerson = (nr) => ({
+  type: 'CHAT_PERSON',
   payload: nr,
 });
 
-export const userLoggedinName = (nr) => ({
-  type: 'USERLOGGEDNAME',
-  payload: nr,
-});
-
-export const userLoggedinId = (nr) => ({
-  type: 'USERLOGGEDID',
-  payload: nr,
-});
-
-const service = (nr) => ({
-  type: 'SERVICE',
-  payload: nr,
-});
-export default service;
 
