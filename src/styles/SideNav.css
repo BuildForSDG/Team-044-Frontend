@@ -1,6 +1,6 @@
 .navigation {
   height: 100%;
-  background: black;
+  background: gray;
   color: white;
   padding: 4%;
 }
@@ -75,11 +75,18 @@ li {
 .img-fluid {
   border: 2px solid white;
   padding: 2px;
+  height: 100%;
 }
 
 .edit-button {
   border: none;
-  background: black;
+  background: gray;
+  color: white;
+}
+
+.edit-button:hover{
+  border: none;
+  background: gray;
   color: white;
 }
 

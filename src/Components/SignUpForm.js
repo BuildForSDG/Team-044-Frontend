@@ -20,6 +20,7 @@ const SignUpForm = () => {
   const [error, setError] = useState('');
   const [farmer, setFarmer] = useState(false);
   const [consumer, setConsumer] = useState(false);
+  const [doctor, setDoctor] = useState(false);
   const [localState, setLocalState] = useLocalState('user-id');
 
 
@@ -33,6 +34,7 @@ const SignUpForm = () => {
   const [services] = useState([
     { value: 'Farmer' },
     { value: 'Consumer' },
+    { value: 'Doctor' }
   ]);
 
   const onChangeHandler = (e, handler) => {
@@ -60,6 +62,8 @@ const SignUpForm = () => {
             setConsumer(true);
           } else if (role === 'Farmer') {
             setFarmer(true);
+          } else if (role === 'Doctor') {
+            setDoctor(true);
           }
         })
         .catch((err) => err);
@@ -72,6 +76,8 @@ const SignUpForm = () => {
     <div>
       {consumer ? <Redirect to="dashboard/01" /> : null}
       {farmer ? <Redirect to="/dashboard/00/" /> : null}
+      {doctor ? <Redirect to="/dashboard/02" /> : null}
+
       <form onSubmit={onFormSubmit}>
         <div className="form-group">
           <input

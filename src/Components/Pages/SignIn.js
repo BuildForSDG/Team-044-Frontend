@@ -11,6 +11,7 @@ const Login = () => {
   const [password, setPassword] = useState('');
   const [farmer, setFarmer] = useState(false);
   const [consumer, setConsumer] = useState(false);
+  const [doctor, setDoctor] = useState(false);
   const [localState, setLocalState] = useLocalState('user-id');
 
   const data = {
@@ -37,6 +38,8 @@ const Login = () => {
           setConsumer(true);
         } else if (role === 'Farmer') {
           setFarmer(true);
+        } else if (role === 'Doctor') {
+          setDoctor(true);
         }
       })
       .catch((err) => err);
@@ -46,6 +49,7 @@ const Login = () => {
     <div className="info">
       {consumer ? <Redirect to="/dashboard/01" /> : null}
       {farmer ? <Redirect to="/dashboard/00" /> : null}
+      {doctor ? <Redirect to="/dashboard/02" /> : null}
 
       <h2 className="text-center">Login</h2>
       <p className="text-center">{data.service}</p>
