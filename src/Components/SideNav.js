@@ -1,31 +1,83 @@
-import React from 'react';
+/* eslint-disable no-unused-vars */
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import Modal from 'react-modal';
+import axios from 'axios';
+import EditProfileForm from './EditProfileForm';
+import useLocalState from '../utils/sessionstorage';
 import '../styles/SideNav.css';
 
-const SideNavigation = () => (
-  <div className="navigation">
-    <img
-      src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"
+Modal.setAppElement('#root');
 
-      alt=".."
-      className="img-fluid"
-    />
-    <h4 className="text-center my-4 name">First Name</h4>
-    <ul>
-      <hr />
-      <li>
-        <Link to="/dashboard" id="dashboard">Dashboard</Link>
-      </li>
-      <hr />
-      <li>
-        <Link to="/dashboard/edit" id="profile">My Profile</Link>
-      </li>
-      <hr />
-      <li>Chats</li>
-  
-      <hr />
-    </ul>
-  </div>
-);
+const SideNavigation = () => {
+  const [image, setImage] = useState('');
+  const [localState, setLocalState] = useLocalState('user-id');
+  const { userId } = localState;
+  const [isOpen, setIsOpen] = useState(false);
+  const openModal = () => {
+    setIsOpen(true);
+  };
 
+  const closeModal = () => {
+    setIsOpen(false);
+  };
+
+  useEffect(() => {
+    axios.get(`http://localhost:4000/view/${userId}`)
+      .then((response) => {
+        const { data } = response;
+        console.log('sdmd', data);
+      })
+      .catch((error) => {
+        console.log('error ---->>>', error.message);
+      });
+  }, [userId]);
+
+
+  return (
+    <div className="navigation">
+      <button type="button" className="text-center edit-profile-button my-3">
+        {image ? <img src={image} alt="" className="img-fluid photo" /> : <i className="bx bxs-user" />}
+      </button>
+      <button type="button" onClick={openModal} className="edit-button">
+        <li>
+          {' '}
+          <i className="bx bxs-edit-alt" />
+          <span>Edit Profile</span>
+        </li>
+      </button>
+      <hr />
+      <Link to={`/dashboard/00/${localState.userId}/products`} className="edit-button">
+        <li>
+          {' '}
+          <i className="bx bxs-edit-alt" />
+          <span>View Produces</span>
+        </li>
+      </Link>
+      <hr />
+      <Link to="/dashboard/00/chat" className="edit-button">
+        <li>
+          <i className="bx bxs-chat" />
+          {' '}
+          <span>Chat</span>
+        </li>
+      </Link>
+
+      <Modal
+        isOpen={isOpen}
+        onRequestClose={closeModal}
+        contentLabel="Profile Modal"
+        className="Modal"
+        overlayClassName="Overlay"
+      >
+        <button onClick={closeModal} className="close-button" type="button">
+          <i className="bx bxs-x-square" />
+        </button>
+        <div>
+          <EditProfileForm />
+        </div>
+      </Modal>
+    </div>
+  );
+};
 export default SideNavigation;

@@ -3,71 +3,53 @@ import React, { useState } from 'react';
 import { Redirect } from 'react-router-dom';
 import axios from 'axios';
 import jwtDecode from 'jwt-decode';
-import useLocalState from '../../utils/localstorage';
+import useLocalState from '../../utils/sessionstorage';
 import '../../styles/SignUp-In.css';
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [service, setService] = useState('');
-  const [done, setDone] = useState(false);
+  const [farmer, setFarmer] = useState(false);
+  const [consumer, setConsumer] = useState(false);
+  const [localState, setLocalState] = useLocalState('user-id');
 
   const data = {
-    // service,
     email,
     password,
   };
-  const [services] = useState([
-    { value: 'Farmer' },
-    { value: 'Consumer' },
-    { value: 'Investor' },
-  ]);
 
   const onChangeHandler = (e, handler) => {
     const { value } = e.target;
     handler(value);
   };
 
-  const [id, setId] = useLocalState('user-id');
-
-
 
   const onFormSubmit = (e) => {
     e.preventDefault();
-    //  SEND TO BACKEND
+    //  BACKEND CALL
     axios.post('http://localhost:4000/auth/login', data)
       .then((res) => {
         const tokens = res.data.token;
-        const decoded = jwtDecode(tokens);
-        setId(decoded.userId);
-        setDone(true);
+        const profile = jwtDecode(tokens);
+        setLocalState(JSON.stringify(profile));
+        const { role } = res.data;
+        if (role === 'Consumer') {
+          setConsumer(true);
+        } else if (role === 'Farmer') {
+          setFarmer(true);
+        }
       })
-      .catch((err) => {
-        console.log(err.message);
-      });
+      .catch((err) => err);
   };
-
 
   return (
     <div className="info">
-      {done ? <Redirect to="/" /> : null}
+      {consumer ? <Redirect to="/dashboard/01" /> : null}
+      {farmer ? <Redirect to="/dashboard/00" /> : null}
 
       <h2 className="text-center">Login</h2>
       <p className="text-center">{data.service}</p>
       <form onSubmit={onFormSubmit}>
-        <select
-          className="custom-select mb-3"
-          value={service}
-          onChange={(event) => onChangeHandler(event, setService)}
-        >
-          <option>Choose Service</option>
-          {services.map(({ value }) => (
-            <option key={value} value={value} id={value}>
-              {value}
-            </option>
-          )) }
-        </select>
-
         <div className="form-group">
           <input
             id="email"
@@ -98,4 +80,5 @@ const Login = () => {
     </div>
   );
 };
+
 export default Login;

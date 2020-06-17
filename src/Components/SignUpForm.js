@@ -1,6 +1,12 @@
+/* eslint-disable no-shadow */
+/* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
 import { Redirect } from 'react-router-dom';
+import jwtDecode from 'jwt-decode';
 import axios from 'axios';
+
+import useLocalState from '../utils/sessionstorage';
+
 import '../styles/SignUp-In.css';
 
 const SignUpForm = () => {
@@ -9,17 +15,20 @@ const SignUpForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
-  const [service, setService] = useState('');
+  const [role, setRole] = useState('');
   const [warning, setWarning] = useState('');
   const [error, setError] = useState('');
-  const [done, setDone] = useState(false);
+  const [farmer, setFarmer] = useState(false);
+  const [consumer, setConsumer] = useState(false);
+  const [localState, setLocalState] = useLocalState('user-id');
+
 
   const data = {
     firstname,
     lastname,
     email,
     password,
-    service,
+    role,
   };
   const [services] = useState([
     { value: 'Farmer' },
@@ -37,17 +46,23 @@ const SignUpForm = () => {
     setWarning('Your passwword must contain at least 6 characters, including 1 special character & 1 number');
   };
 
+
   const onFormSubmit = (e) => {
     e.preventDefault();
     if (password === confirmPassword && password.match(/(?=.*?[0-9])(?=.*?[#?!@$%^&*-.]).{8,}$/)) {
       axios.post('http://localhost:4000/auth/signup', data)
         .then((res) => {
-          console.log(res);
-          setDone(true);
+          const tokens = res.data.token;
+          const profile = jwtDecode(tokens);
+          setLocalState(JSON.stringify(profile));
+          const { role } = res.data;
+          if (role === 'Consumer') {
+            setConsumer(true);
+          } else if (role === 'Farmer') {
+            setFarmer(true);
+          }
         })
-        .catch((err) => {
-          console.log(err);
-        });
+        .catch((err) => err);
       setError('');
     } else {
       setError('Your passwword must contain at least 6 characters, including 1 special character(#,?,!,@,-, etc) & 1 number');
@@ -55,7 +70,8 @@ const SignUpForm = () => {
   };
   return (
     <div>
-      {done ? <Redirect to="sign-in" /> : null}
+      {consumer ? <Redirect to="dashboard/01" /> : null}
+      {farmer ? <Redirect to="/dashboard/00/" /> : null}
       <form onSubmit={onFormSubmit}>
         <div className="form-group">
           <input
@@ -116,10 +132,10 @@ const SignUpForm = () => {
 
         <select
           className="custom-select mb-3"
-          value={service}
-          onChange={(event) => onChangeHandler(event, setService)}
+          value={role}
+          onChange={(event) => onChangeHandler(event, setRole)}
         >
-          <option>Choose Service</option>
+          <option>Choose a Role</option>
           {services.map(({ value }) => (
             <option key={value} value={value} id={value}>
               {value}

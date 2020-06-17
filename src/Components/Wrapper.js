@@ -1,7 +1,6 @@
-
-
 import React from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+import logout from '../utils/logout';
 
 const Wrapper = () => (
   <div>
@@ -23,28 +22,30 @@ const Wrapper = () => (
             </li>
 
             <li>
-              <NavLink to="/dashboard">Farmer Dashboard</NavLink>
+              <NavLink to="/dashboard/00">Farmer Dashboard</NavLink>
             </li>
 
             <li>
-              <NavLink to="/dashboard/consumer">Consumer Dashboard</NavLink>
+              <NavLink to="/dashboard/01">Consumer Dashboard</NavLink>
             </li>
-  
-                <li>
-                  <NavLink to="/sign-up">Sign Up</NavLink>
-                </li>
-                <li>
-                  <NavLink to="/sign-in">Sign In</NavLink>
-                </li>
-                
-              <li>
-              <NavLink to="/">Sign Out</NavLink>
+
+            <li>
+              <NavLink to="/sign-up">Sign Up</NavLink>
+            </li>
+            <li>
+              <NavLink to="/sign-in">Sign In</NavLink>
+            </li>
+
+            <li>
+              <NavLink to="/" onClick={logout}>Sign Out</NavLink>
             </li>
           </ul>
         </nav>
       </div>
     </header>
   </div>
+
+
 );
 
 export default Wrapper;

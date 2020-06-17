@@ -1,33 +1,37 @@
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-
-import { useDispatch } from 'react-redux';
+import Loader from 'react-loader';
 import axios from 'axios';
-// import Loader from '../LoaderIcon';
-import useLocalState from '../../utils/localstorage';
 
 import '../../styles/Products.css';
 
 const Products = () => {
   const [fullData, setFullData] = useState(null);
   const [linkId, setLinkId] = useState(false);
-const [id, setId] = useLocalState('product-id');
+  const [id, setId] = useState('');
+  const [loaded, setLoaded] = useState(false);
 
 
   useEffect(() => {
     axios.get('http://localhost:4000/products')
       .then((response) => {
         const { data } = response;
+        console.log('sdmd', data);
         setFullData(data);
+        setLoaded(true);
       })
       .catch((error) => {
         console.log('error ---->>>', error.message);
       });
   }, []);
 
+  console.log(fullData, 'yfm,de');
+
   return (
     <div className="main-wrapper">
+
+      {loaded ? (
         <div className="center">
           <div className="row">
             {fullData.map(({
@@ -61,10 +65,15 @@ const [id, setId] = useLocalState('product-id');
               </div>
             ))}
           </div>
+
         </div>
-    
+      ) : <Loader loaded={loaded} className="product-loader" /> }
+
     </div>
   );
 };
 
 export default Products;
+
+
+// <p>hgnbcbn</p>
