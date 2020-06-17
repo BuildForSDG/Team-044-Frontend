@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import dotenv from 'dotenv';
+import '../styles/Dashboard.css';
 
 dotenv.config();
 
@@ -38,27 +39,17 @@ const FarmProduceForm = () => {
 
   const onFileChange = (e) => {
     e.preventDefault();
-    let fi;
-    // CLOUUDINARY UPLOAD
-    const { files } = e.target;
+    const file = e.target.files[0];
+    console.log(file, '=--');
     const formData = new FormData();
-    for (let i = 0; i < files.length; i++) {
-      // file = files[i];
+    formData.append('file', file);
+    formData.append('upload_preset', UPLOAD_PRESET);
 
-      console.log('snfdmd', files[i]);
-      formData.append('file', files[i]);
-      formData.append('upload_preset', UPLOAD_PRESET);
-      axios.post(URL, formData, {
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      }).then((img) => {
-        fi = img.data.url;
-      }).catch((err) => err);
-    }
-
-    console.log('d', fi);
-    // const links = [];
-    // links.push(image);
-    // console.log('ray', links);
+    axios.post(URL, formData, {
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    }).then((img) => {
+      setImage(img.data.url);
+    }).catch((err) => err);
   };
 
 
@@ -79,7 +70,7 @@ const FarmProduceForm = () => {
     }
   };
   return (
-    <div className="my-5">
+    <div className="my-5 produce-form" id="addProduce">
       {error && <p>{error}</p>}
       <form onSubmit={onFormSubmit}>
         <div className="form-group">

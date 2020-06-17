@@ -1,22 +1,22 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import "../styles/main.css";
+import React, { useState } from 'react';
+import '../styles/main.css';
+
 const API = {
-  key: `e77a8b96b2628539b4ecb96709f06d28`,
-  base: `https://api.openweathermap.org/data/2.5/`,
+  key: 'e77a8b96b2628539b4ecb96709f06d28',
+  base: 'https://api.openweathermap.org/data/2.5/',
 };
 
 const WeatherApp = () => {
-  const [getInput, setGetInput] = useState("");
+  const [getInput, setGetInput] = useState('');
   const [weather, setWeather] = useState({});
 
   const search = (evt) => {
-    if (evt.key === "Enter") {
+    if (evt.key === 'Enter') {
       fetch(`${API.base}weather?q=${getInput}&units=metric&appid=${API.key}`)
         .then((res) => res.json())
         .then((result) => {
           setWeather(result);
-          setGetInput("");
+          setGetInput('');
           console.log(result);
         });
     }
@@ -37,7 +37,7 @@ const WeatherApp = () => {
         />
       </div>
 
-      {typeof weather.main != "undefined" ? (
+      {typeof weather.main !== 'undefined' ? (
         <div className="main">
           <div className="container">
             <div className="state">
@@ -52,33 +52,55 @@ const WeatherApp = () => {
             </div>
             <div className="date">
               <span>
-                {weather.name}, {weather.sys.country}
+                {weather.name}
+                ,
+                {weather.sys.country}
               </span>
             </div>
             <div className="currentTemp">
-              <span>Temperature:{Math.round(weather.main.temp)}&deg;C</span>
+              <span>
+                Temperature:
+                {Math.round(weather.main.temp)}
+                &deg;C
+              </span>
             </div>
             <div className="sub-container">
               <div className="minmaxTemp">
                 <span>
-                  Min: {Math.round(weather.main.temp_min)} &deg;C &amp; Max:{" "}
-                  {Math.round(weather.main.temp_max)}&deg;C
+                  Min:
+                  {' '}
+                  {Math.round(weather.main.temp_min)}
+                  {' '}
+                  &deg;C &amp; Max:
+                  {' '}
+                  {Math.round(weather.main.temp_max)}
+                  &deg;C
                 </span>
               </div>
               <div className="pressure">
-                <span>Pressure: {weather.main.pressure}</span>
+                <span>
+                  Pressure:
+                  {weather.main.pressure}
+                </span>
               </div>
               <div className="humidity">
-                <span> Humidity: {weather.main.humidity}</span>
+                <span>
+                  {' '}
+                  Humidity:
+                  {weather.main.humidity}
+                </span>
               </div>
               <div className="description">
-                <p>Condition: {weather.weather[0].description}</p>
+                <p>
+                  Condition:
+                  {weather.weather[0].description}
+                </p>
               </div>
             </div>
           </div>
         </div>
       ) : (
-        ""
+        ''
       )}
     </div>
   );

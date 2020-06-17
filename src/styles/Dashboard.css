@@ -1,9 +1,3 @@
-
-.sales {
-  background: black;
-  color: white;
-}
-
 .side {
   padding-left: 0;
 }
@@ -15,5 +9,21 @@
 }
 
 .centered {
-  background: black;
+  background: gray;
+  color: white;
+}
+
+.centered a {
+  color: white;
+}
+
+#addProduce .produce-form {
+  box-shadow: 3px 3px 10px rgba(30, 31, 30);
+  /* display: flex; */
+  background: none;
+}
+
+#doctor {
+  width: 75%;
+  margin: 15% auto;
 }

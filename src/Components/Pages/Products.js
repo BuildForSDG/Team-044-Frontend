@@ -1,6 +1,5 @@
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import Loader from 'react-loader';
 import axios from 'axios';
 
@@ -42,15 +41,10 @@ const Products = () => {
                 key={_id}
                 className="col-6 col-lg-3 py-4 px-2.5"
               >
-                <Link
-                  to={`/products/display/${_id}`}
-                  onClick={() => {
-                    setId(_id);
-                    setLinkId(true);
-                  }}
-                >
+        
                   <div>
                     <img
+                      id='pr-image'
                       className="img-fluid"
                       src={image[0]}
                       alt="A product"
@@ -60,7 +54,6 @@ const Products = () => {
                     <p>{name}</p>
                     <p>{price}</p>
                   </div>
-                </Link>
 
               </div>
             ))}
